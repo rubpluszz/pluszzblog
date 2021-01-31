@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+					
+			   <div class="row mb-2 container">
+            	<div class="col-md-9 " align="right">
+
+            			{% if user.role %}</h> 
+							{{ wtf.quick_form(form) }}
+						{% endif %}
+						<div class="row mb-2 container" style="padding-left:20px;padding-top:15px;"> 
+
+						{% for post in posts %}
+        					{% include '_post.html' %}
+    					{% endfor %}
+    					</div>
+   					<ul class="pager">
+            			<li class="previous{% if not prev_url %} disabled{% endif %}">
+			                <a href="{{ prev_url or '#' }}" style="color:#463F3A;background:#BCB8B1">
+			                    <span aria-hidden="true">&larr;</span> {{ _('Newer posts') }}
+               				</a>
+           			    </li>
+            			<li class="next{% if not next_url %} disabled{% endif %}">
+                			<a href="{{ next_url or '#' }}" style="color:#463F3A;background:#BCB8B1">
+                    			{{ _('Older posts') }} <span aria-hidden="true">&rarr;</span>
+                			</a>
+            			</li>
+        			</ul>
+        			</div>
+            	<div class="col-md-2  text-left col-xs-offset-1" style="color:#F4F3EE;background:#463F3A; border-radius: 20px 20px 20px 20px"" align="left">
+				
+        		{% for post in posts %}
+       				<div><h2>{{ post.title }}</h2>
+        			<p>{{ post.body}}</p></div>
+
+        		{% endfor %}
+        		<br
+        		<p>svdscv</p> 
+        		<p>vzxdcvx</p>
+        		<p>dsvdfsv</p>
+        		<br>
+        		<hr>
+        		{% for post in posts %}
+       				<div><h2>{{ post.title }}</h2>
+        			<p>{{ post.body}}</p></div>
+        		{% endfor %}
+        		<p>svdscv</p> 
+        		<p>vzxdcvx</p>
+        		<p>dsvdfsv</p>
+        		<br>
+        		<hr>
+        		{% for post in posts %}
+       				<div><h2>{{ post.title }}</h2>
+        			<p>{{ post.body}}</p></div>
+        		{% endfor %}
+        		<p>svdscv</p> 
+        		<p>vzxdcvx</p>
+        		<p>dsvdfsv</p>
+        		<br>
+
+    		</div>
+    	</div>
+{% endblock %}

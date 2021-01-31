@@ -1,0 +1,38 @@
+                <div class="col-md-5" align="left" style="padding: 30px" >
+                     
+                    <div class="col-md-6" style="background: #8B432D;color:#F4F3EE;font-size:10px;border-radius: 3px 3px 3px 3px;">
+
+                                {{ post.section }}
+                    </div>
+                    <br>  
+                    <div class="col-md-10" style="background:#F4F3EE;
+                                border-radius: 20px" >
+                 
+                    <div class="row col-md-8 border"align="left">
+
+                            <h4 class="featurette-heading"
+                                {% if post.id%2== 0 %}
+                                    align="left" 
+                                {% else %}
+                                    align="left" 
+                                {% endif %}
+                                    style="color:#8B432D">
+                                
+                                <b>
+                                    {{ post.title }}.
+                                </b>
+                            </h4>
+                            <p>
+                                {{ post.description }}
+                            </p>
+                        </div>
+        
+                        <div class="row ncol-md-5 col-md-pull-7 " 
+                            align="right">
+                            <img class="featurette-image img-responsive center-block" align="right" data-src="holder.js/500x500/auto" alt="500x500" src="{{ post.title_image}}" data-holder-rendered="true" width="150" height="250" style="border-radius: 0px 20px 20px 0px">
+                        </div>
+                    </div>
+                </div>
+
+  
+                 

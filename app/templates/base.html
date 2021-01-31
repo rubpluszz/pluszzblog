@@ -1,0 +1,82 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block head %}
+    <link rel="icon"  href="{{ url_for('static', filename='favikon.png') }}" >
+    <title>
+       {% if title %}
+            {{ title }} - PluszzBlog
+       {% else %}
+            PluszzBlog
+       {% endif %}
+    </title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+{% endblock %}
+
+{% block navbar %}
+    <body style="background:#BCB8B1;">
+        <nav class="navbar navbar-light navbar-static-top" id="navbar" data-spy="affix" style="top:0;left:0; right:0; width:100%; background:#8A817C; font" data-offset-top="100">
+            <a class="navbar-brand navbar-brand-img" href="{{ url_for('main.index') }}">
+                <img style="width: 80px" src="{{ url_for('static', filename='logo.png') }}">
+            </a>
+            <div class="container">
+                 <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" name="menu" aria-label="Toggle navigation" style="background:#F4F3EE;color:#BCB8B1;"right:20px;>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ url_for('main.index') }}" style="color:#F4F3EE;"><b>{{ _('PluszzBlog') }}</b></a></li>
+                    </ul>
+                    {% if g.search_form %}
+                        <form class="navbar-form navbar-left" method="get" action="{{ url_for('main.search') }}">
+                            <div class="form-group">
+                                {{ g.search_form.q(size=20, class='form-control', placeholder=g.search_form.q.label.text) }}
+                            </div>
+                    </form>
+                    {% endif %}
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if current_user.is_anonymous %}
+                            <li><a href="{{ url_for('auth.login') }}"style="color:#F4F3EE;"><b>{{ _('Login') }}</b></a></li>
+                        {% else %}
+                            <li><a href="{{ url_for('auth.logout') }}" style="color:#F4F3EE;"><b>{{ _('Logout') }}</b></a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+{% endblock %}
+
+{% block content %}
+    
+    <div class="container">
+            <br>
+    <b>
+            <h1 style="color:#8B432D; padding-left:15px">{{ title }}</h1>
+    </b>
+    <br>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-info" role="alert">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            {# application content needs to be provided in the app_content block #}
+            {% block app_content %}{% endblock %}
+        <br>
+        <br>
+        </div>
+        <div class="fixed-sm-bottom text-light " style="background:#8B432D;">
+            <br>
+            <p align="center" style="color: #BCB8B1">{{ _('Contacts for cooperation: ') }}<a href="mailto:pluszz@gmail.com">pluszz@gmail.com</a></p>
+            <p align="center" style="color: #BCB8B1">© 2021 Pluszz</p>
+        </div>
+    </body>
+{% endblock %}
