@@ -1,0 +1,1198 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fi",
+				"first_or_404"
+			],
+			[
+				"po",
+				"posts"
+			],
+			[
+				"u",
+				"username"
+			],
+			[
+				"de",
+				"delite_user"
+			],
+			[
+				"dis",
+				"disliker"
+			],
+			[
+				"b",
+				"back_populates"
+			],
+			[
+				"com",
+				"comments"
+			],
+			[
+				"password_",
+				"check_password_hash"
+			],
+			[
+				"Co",
+				"Column"
+			],
+			[
+				"di",
+				"dislikes_table"
+			],
+			[
+				"re",
+				"relationship"
+			],
+			[
+				"se",
+				"secondary"
+			],
+			[
+				"li",
+				"likes_table"
+			],
+			[
+				"dat",
+				"datetime"
+			],
+			[
+				"p",
+				"primary_key"
+			],
+			[
+				"int",
+				"Integer"
+			],
+			[
+				"te",
+				"text-light"
+			],
+			[
+				"ti",
+				"title\tTag"
+			],
+			[
+				"st",
+				"style\tTag"
+			],
+			[
+				"def",
+				"default"
+			],
+			[
+				"h",
+				"h2\tTag"
+			],
+			[
+				"не",
+				"необхідно"
+			],
+			[
+				"ge",
+				"generate_temporary_password"
+			],
+			[
+				"ко",
+				"користувача"
+			],
+			[
+				"c",
+				"col-md-4"
+			],
+			[
+				"register_",
+				"register_bp"
+			],
+			[
+				"bo",
+				"bottom\tproperty"
+			],
+			[
+				"T",
+				"ToTop"
+			],
+			[
+				"ru",
+				"rule-1-1"
+			],
+			[
+				"l",
+				"list-group-item-secondary"
+			],
+			[
+				"lis",
+				"list-group-item"
+			],
+			[
+				"F",
+				"FlaskForm"
+			],
+			[
+				"reset",
+				"reset_password"
+			],
+			[
+				"us",
+				"user"
+			],
+			[
+				"user",
+				"user_popup"
+			],
+			[
+				"lo",
+				"login_required"
+			],
+			[
+				"en",
+				"environ"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"get",
+				"get_locale"
+			],
+			[
+				"sea",
+				"SearchForm"
+			],
+			[
+				"fo",
+				"formdata"
+			],
+			[
+				"D",
+				"DataRequired"
+			],
+			[
+				"S",
+				"StringField"
+			],
+			[
+				"id",
+				"ids"
+			],
+			[
+				"pa",
+				"page"
+			],
+			[
+				"q",
+				"query_index"
+			],
+			[
+				"dest",
+				"destElem"
+			],
+			[
+				"d",
+				"destLang"
+			],
+			[
+				"so",
+				"sourceLang"
+			],
+			[
+				"E",
+				"EmptyForm"
+			],
+			[
+				"post",
+				"post"
+			],
+			[
+				"a",
+				"attachments"
+			],
+			[
+				"ap",
+				"app_context"
+			],
+			[
+				"Te",
+				"TestConfig"
+			],
+			[
+				"att",
+				"attachments"
+			],
+			[
+				"auth",
+				"auth_bp"
+			],
+			[
+				"des",
+				"destElem"
+			],
+			[
+				"nav",
+				"navbar"
+			],
+			[
+				"co",
+				"conteiner"
+			],
+			[
+				"B",
+				"Babel"
+			],
+			[
+				"res",
+				"reset_password"
+			],
+			[
+				"ht",
+				"html_body"
+			],
+			[
+				"has",
+				"has_prev"
+			],
+			[
+				"next",
+				"next_url"
+			],
+			[
+				"ne",
+				"next_url"
+			],
+			[
+				"PO",
+				"POSTS_PER_PAGE"
+			],
+			[
+				"P",
+				"Post"
+			],
+			[
+				"Y",
+				"Your"
+			],
+			[
+				"Po",
+				"POST"
+			],
+			[
+				"foll",
+				"following"
+			],
+			[
+				"ur",
+				"url_for"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"No",
+				"None"
+			],
+			[
+				"e",
+				"errorhandler"
+			],
+			[
+				"set",
+				"setLevel"
+			],
+			[
+				"mai",
+				"MAIL_USERNAME"
+			],
+			[
+				"s",
+				"STMPHandler"
+			],
+			[
+				"MA",
+				"MAIL_PASSWORD"
+			],
+			[
+				"m",
+				"MAIL_USERNAME"
+			],
+			[
+				"y",
+				"your"
+			],
+			[
+				"login",
+				"login_required"
+			],
+			[
+				"Sq",
+				"SQLALCHEMY_DATABASE_URI"
+			],
+			[
+				"sQ",
+				"SQLALCHEMY_MIGRATE_REPO"
+			],
+			[
+				"SQ",
+				"SQLALCHEMY_DATABASE_URI"
+			],
+			[
+				"mi",
+				"migration"
+			],
+			[
+				"SQL",
+				"SQLALCHEMY_MIGRATE_REPO"
+			],
+			[
+				"reg",
+				"register"
+			],
+			[
+				"fl",
+				"flash"
+			],
+			[
+				"v",
+				"validate_on_submit"
+			],
+			[
+				"is",
+				"is_authenticated"
+			],
+			[
+				"N",
+				"None"
+			],
+			[
+				"nex",
+				"next_page"
+			],
+			[
+				"fla",
+				"flask_login"
+			],
+			[
+				"logou",
+				"logout_user"
+			],
+			[
+				"pas",
+				"password"
+			],
+			[
+				"pass",
+				"password_hash"
+			],
+			[
+				"ch",
+				"check_password_hash"
+			],
+			[
+				"L",
+				"LoginForm"
+			],
+			[
+				"lined",
+				"logined_with_vk"
+			],
+			[
+				"cl",
+				"click"
+			],
+			[
+				"C",
+				"CLASS_NAME"
+			],
+			[
+				"LOGIN",
+				"login"
+			],
+			[
+				"start",
+				"start_new_game"
+			],
+			[
+				"tab",
+				"table"
+			],
+			[
+				"ta",
+				"tablename"
+			],
+			[
+				"TI",
+				"time_"
+			],
+			[
+				"eXCE",
+				"Exception"
+			],
+			[
+				"ex",
+				"execute"
+			],
+			[
+				"str",
+				"struct_time"
+			],
+			[
+				"DA",
+				"data"
+			],
+			[
+				"f",
+				"find_element"
+			],
+			[
+				"clo",
+				"closse_reklame"
+			],
+			[
+				"Lo",
+				"LoginPage"
+			],
+			[
+				"Logi",
+				"LoginPageLocators"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "config.py",
+			"settings":
+			{
+				"buffer_size": 396,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "microblog.py",
+			"settings":
+			{
+				"buffer_size": 145,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test_db.py",
+			"settings":
+			{
+				"buffer_size": 2684,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pluszz/flask_game/microblog/app/main/routes.py",
+			"settings":
+			{
+				"buffer_size": 6378,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pluszz/flask_game/microblog/app/models.py",
+			"settings":
+			{
+				"buffer_size": 4800,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/__init__.py",
+			"settings":
+			{
+				"buffer_size": 316,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/templates/index.html",
+			"settings":
+			{
+				"buffer_size": 231,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/routes.py",
+			"settings":
+			{
+				"buffer_size": 788,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".env",
+			"settings":
+			{
+				"buffer_size": 321,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"Build With: Python - Syntax Check"
+			],
+			[
+				"plugin",
+				"Plugin Development: Profile Events"
+			],
+			[
+				"Insta",
+				"Install Package Control"
+			],
+			[
+				"Pacag",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 124.0,
+		"history":
+		[
+			"from models import get_reset_password_token",
+			"from models importget_reset_password_token",
+			"get_reset_password_token",
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/pluszz/flask_game/pluszzblog/app/templates/login.html",
+		"/home/pluszz/flask_game/pluszzblog/models.py",
+		"/home/pluszz/flask_game/pluszzblog/.env",
+		"/home/pluszz/flask_game/microblog/setup.py",
+		"/home/pluszz/flask_game/microblog/microblog.py",
+		"/home/pluszz/flask_game/microblog/app/__init__.py",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/models.py",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/main/forms.py",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/main/routes.py",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/templates/index.html",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/templates/user.html",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/templates/_post.html",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/templates/base.html",
+		"/home/pluszz/flask_game/microblog/app/models.py",
+		"/home/pluszz/flask_game/microblog/app/templates/base.html",
+		"/home/pluszz/flask_game/microblog/app/main/routes.py",
+		"/home/pluszz/flask_game/microblog/app/templates/_post.html",
+		"/home/pluszz/flask_game/remix_replace/app/templates/_post.html",
+		"/home/pluszz/flask_game/remix_replace/app/templates/base.html",
+		"/home/pluszz/flask_game/multgame_git/MultGame/config.py",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/templates/style.css",
+		"/home/pluszz/flask_game/microblog/requirements.txt",
+		"/home/pluszz/flask_game/microblog/app/auth/routes.py",
+		"/home/pluszz/flask_game/microblog/app/templates/edit_profile.html",
+		"/home/pluszz/flask_game/microblog/app/main/forms.py",
+		"/home/pluszz/flask_game/microblog/config.py",
+		"/home/pluszz/flask_game/microblog/app/templates/index.html",
+		"/home/pluszz/flask_game/microblog/app/templates/user.html",
+		"/home/pluszz/flask_game/remix_replace/Procfile",
+		"/home/pluszz/flask_game/microblog/Procfile",
+		"/home/pluszz/flask_game/multgame_git/MultGame/postmarkup/parser.py",
+		"/home/pluszz/flask_game/multgame_git/MultGame/postmarkup/__init__.py",
+		"/home/pluszz/flask_game/microblog/postmarkupx/trunk/makedist.bat",
+		"/home/pluszz/flask_game/multgame_git/MultGame/multmaniak_page.py",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/__init__.py",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/cli.py",
+		"/home/pluszz/flask_game/remix_replace/app/login/routes.py",
+		"/home/pluszz/flask_game/remix_replace/requirements.txt",
+		"/home/pluszz/flask_game/remix_replace/app/templates/email/set_password.html",
+		"/home/pluszz/flask_game/remix_replace/app/templates/email/set_password.txt",
+		"/home/pluszz/flask_game/remix_replace/app/templates/email/reset_password.html",
+		"/home/pluszz/flask_game/remix_replace/app/register/email.py",
+		"/home/pluszz/flask_game/remix_replace/app/register/routes.py",
+		"/home/pluszz/flask_game/remix_replace/app/models.py",
+		"/home/pluszz/flask_game/remix_replace/app/__init__.py",
+		"/home/pluszz/flask_game/remix_replace/.env",
+		"/home/pluszz/flask_game/remix_replace/config.py",
+		"/home/pluszz/flask_game/remix_replace/app/main/__init__.py",
+		"/home/pluszz/flask_game/remix_replace/app/login/email.py",
+		"/home/pluszz/flask_game/remix_replace/app/templates/register/register.html",
+		"/home/pluszz/flask_game/remix_replace/app/templates/register/accept_order.html",
+		"/home/pluszz/flask_game/remix_replace/app/templates/login/login.html",
+		"/home/pluszz/flask_game/remix_replace/app/register/forms.py",
+		"/home/pluszz/flask_game/remix_replace/app/register/__init__.py",
+		"/home/pluszz/flask_game/remix_replace/app/templates/register/endregister.html",
+		"/home/pluszz/flask_game/remix_replace/app/templates/email/new_user_password.txt",
+		"/home/pluszz/flask_game/remix_replace/app/email.py",
+		"/home/pluszz/flask_game/remix_replace/multmaniak_page.py",
+		"/home/pluszz/flask_game/remix_replace/README.md",
+		"/home/pluszz/flask_game/remix_replace/app/templates/login/reset_password_request.html",
+		"/home/pluszz/flask_game/remix_replace/app/login/__init__.py",
+		"/home/pluszz/flask_game/remix_replace/app/templates/register/set_password.html",
+		"/home/pluszz/flask_game/remix_replace/app/templates/email/reset_password.txt",
+		"/home/pluszz/flask_game/remix_replace/app/cli.py",
+		"/home/pluszz/flask_game/remix_replace/app/templates/_rules_content.html",
+		"/home/pluszz/flask_game/remix_replace/app/templates/auth/login.html",
+		"/home/pluszz/flask_game/remix_replace/app/main/routes.py",
+		"/home/pluszz/flask_game/remix_replace/app/templates/auth/accept_order.html",
+		"/home/pluszz/flask_game/remix_replace/app/templates/register/_rules_content.html",
+		"/home/pluszz/flask_game/remix_replace/app/templates/login/reset_password.html",
+		"/home/pluszz/flask_game/remix_replace/app/auth/forms.py",
+		"/home/pluszz/flask_game/remix_replace/app/auth/routes.py",
+		"/home/pluszz/flask_game/remix_replace/app/templates/auth/_rules_content.html",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/templates/user_popup.html",
+		"/home/pluszz/flask_game/MultGame_Tupic/config.py",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/auth/routes.py",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/templates/auth/login.html",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/templates/auth/register.html",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/auth/forms.py",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/templates/auth/accept_order.html",
+		"/home/pluszz/flask_game/multgame_git/MultGame/app/auth/accept_order.html",
+		"/home/pluszz/flask_game/MultGame/app/templates/auth/login.html",
+		"/home/pluszz/flask_game/multgame_git/MultGame/Dockerfile",
+		"/home/pluszz/flask_game/MultGame/config.py",
+		"/home/pluszz/flask_game/MultGame/app/main/routes.py",
+		"/home/pluszz/flask_game/MultGame/app/templates/base.html",
+		"/home/pluszz/flask_game/MultGame/app/templates/user.html",
+		"/home/pluszz/flask_game/MultGame/app/auth/routes.py",
+		"/home/pluszz/flask_game/MultGame/app/cli.py",
+		"/home/pluszz/flask_game/MultGame/multmaniak_page.py",
+		"/home/pluszz/flask_game/MultGame/app/__init__.py",
+		"/home/pluszz/flask_game/MultGame/requirements.txt",
+		"/home/pluszz/flask_game/MultGame/app/templates/edit_profile.html",
+		"/home/pluszz/flask_game/MultGame/app/translate.py",
+		"/home/pluszz/flask_game/MultGame/app/templates/auth/reset_password_request.html",
+		"/home/pluszz/flask_game/MultGame/app/templates/auth/reset_password.html",
+		"/home/pluszz/flask_game/MultGame/app/templates/auth/register.html",
+		"/home/pluszz/flask_game/MultGame/app/templates/search.html",
+		"/home/pluszz/flask_game/MultGame/app/main/forms.py",
+		"/home/pluszz/flask_game/MultGame/test.py",
+		"/home/pluszz/flask_game/MultGame/Procfile",
+		"/home/pluszz/flask_game/MultGame/Vagrantfile",
+		"/home/pluszz/flask_game/MultGame/app/search.py",
+		"/home/pluszz/flask_game/MultGame/app/models.py",
+		"/home/pluszz/flask_game/MultGame/app/templates/_post.html",
+		"/home/pluszz/flask_game/MultGame/app/templates/errors/404.html",
+		"/home/pluszz/flask_game/MultGame/app/templates/errors/500.html",
+		"/home/pluszz/flask_game/MultGame/app/templates/email/reset_password.txt",
+		"/home/pluszz/flask_game/MultGame/app/templates/email/reset_password.html",
+		"/home/pluszz/flask_game/MultGame/app/email.py",
+		"/home/pluszz/flask_game/MultGame/app/auth/email.py",
+		"/home/pluszz/flask_game/MultGame/app/errors/handlers.py",
+		"/home/pluszz/flask_game/MultGame/app/main/__init__.py",
+		"/home/pluszz/flask_game/MultGame/app/auth/forms.py",
+		"/home/pluszz/flask_game/MultGame/app/templates/index.html",
+		"/home/pluszz/flask_game/MultGame/app/translations/uk/LC_MESSAGES/messages.po",
+		"/home/pluszz/flask_game/MultGame/app/translations/ru/LC_MESSAGES/messages.po",
+		"/home/pluszz/flask_game/MultGame/app/translations/pl/LC_MESSAGES/messages.po",
+		"/home/pluszz/flask_game/MultGame/babel.cfg",
+		"/home/pluszz/flask_game/MultGame/app/errors/__init__.py",
+		"/home/pluszz/flask_game/MultGame/app/auth/__init__.py",
+		"/home/pluszz/flask_game/MultGame/app/templates/reset_password_request.html",
+		"/home/pluszz/flask_game/MultGame/app/templates/404.html",
+		"/home/pluszz/flask_game/MultGame/app/templates/login.html",
+		"/home/pluszz/flask_game/MultGame/app/templates/reset_password.html",
+		"/home/pluszz/flask_game/MultGame/app/templates/register.html",
+		"/home/pluszz/flask_game/MultGame/app/templates/500.html",
+		"/home/pluszz/flask_game/MultGame/.gitignore"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 98.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".)",
+			"render_bbcode",
+			"render",
+			"{% block body -%}",
+			"^\\s{4}",
+			"\\b(^\\s{4})\\b",
+			"(^\\s{4})",
+			"^\\s{4}",
+			"^/s{4}",
+			"^\\s{4}",
+			"(\\s{4})",
+			"\\s{4}",
+			"/s{4}",
+			"{4}",
+			"{{ url_for('register.accept_order')+'#rule-1",
+			"auth.",
+			"'auth.",
+			"auth",
+			"auth.",
+			"auth/",
+			"auth",
+			"auth/",
+			".auth",
+			"microblog",
+			"app.route",
+			"app",
+			"@app.",
+			"@app",
+			"index(",
+			"index",
+			"index()",
+			"translate",
+			"{username}",
+			"TextArea",
+			"@app",
+			"'index'",
+			"@app",
+			"'login'",
+			"'index'",
+			"app",
+			"mess",
+			"currentuser",
+			"curentuser",
+			"<span class=\"icon-bar\"></span>",
+			"></",
+			"span",
+			"items",
+			"STMP",
+			"us",
+			"user",
+			"('')",
+			"c"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"#rule-1",
+			"\"#rule-1",
+			"register.",
+			"login.",
+			"login/",
+			"register/",
+			".register",
+			".login",
+			"bp.route",
+			"@bp",
+			"'main.index'",
+			"@bp",
+			"@bp.app",
+			"'auth/login'",
+			"'main.index'",
+			"SMTP",
+			"o"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "config.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 396,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								396,
+								396
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "microblog.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 145,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								145,
+								145
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "test_db.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2684,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1598,
+								1598
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 120.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/pluszz/flask_game/microblog/app/main/routes.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6378,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3452,
+								3452
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 633.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/pluszz/flask_game/microblog/app/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4800,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4039,
+								4039
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 882.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/__init__.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 316,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								283,
+								283
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/templates/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 231,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/routes.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 788,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": ".env",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 321,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 96.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "pluszzblog.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
