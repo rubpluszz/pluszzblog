@@ -20,6 +20,16 @@ body{
 	font-weight: bold; 
 }
 
+a{
+	text-decoration: underline;
+	color: #333533;
+}
+
+a:hover{
+	color: #CFDBD5;
+	text-decoration: none;
+}
+
 li.login-logout{
 	position: fixed;
 	top: 33px;
@@ -63,26 +73,47 @@ li.search-field{
 
 h1{
     color:#F5CB5C;
-    padding-left:15px;
-    font-weight: bold; 
+    padding-bottom:1em;
+    padding-top:1em;
+    font-weight: bold;
+
 }
+
+
 
 div.post-tytle-block{
-	color:#F4F3EE;
-	background:#463F3A;
-	border-radius: 20px 20px 20px 20px""
+	color:#F5CB5C;
+	border-radius: 20px 20px 20px 20px;
+	font-size: 12px;
+	width: 120px;
+	position: relative;
+	bottom:4em;
 }
 
+div.selected-post{
+	margin:5px;
+	border-radius: 20px 20px 20px 20px;
+	background: #242423;
+}
 div.fixed-sm-bottom{
 	background:#F5CB5C;
-	color: #242423 
+	color: #242423;
+	padding-top: 12px;
+	padding-bottom:100px;
+
 }
 
-.content{
-	background: #333533;
+div.content{
+	position:relative;
+	top: 10em; 
 	margin-left: auto;
     margin-right: auto;
     width: 70%;
 
+}
 
+div.container{
+	display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
 }

@@ -3,18 +3,25 @@
 
 {% block app_content %}
 					
-			   
-            	<div class="col-md-9 " align="left">
+			   {% if user.role %}</h> 
+                            {{ wtf.quick_form(form) }}
+                        {% endif %}
+            	    <div class="col-md-9 " style="display: flex; flex-direction:row;">
 
-            			{% if user.role %}</h> 
-							{{ wtf.quick_form(form) }}
-						{% endif %}
-						<div class="row mb-2 container" style="padding-left:20px;padding-top:15px;"> 
+            			
+						<div class="column-left" style="display:flex; flex-direction:column;"> 
 
-						{% for post in posts %}
+						  {% for post in posts1 %}
         					{% include '_post.html' %}
-    					{% endfor %}
+    					  {% endfor %}
     					</div>
+                        <div class="column-right" style="display:flex; flex-direction:column;"> 
+
+                          {% for post in posts2 %}
+                            {% include '_post.html' %}
+                          {% endfor %}
+                        </div>
+                    </div>
    					<ul class="pager">
             			<li class="previous{% if not prev_url %} disabled{% endif %}">
 			                <a href="{{ prev_url or '#' }}" style="color:#463F3A;background:#BCB8B1">
@@ -27,6 +34,6 @@
                 			</a>
             			</li>
         			</ul>
-        			</div>
+        			
 
 {% endblock %}

@@ -37,7 +37,7 @@ def index():
     prev_url = url_for('main.explore', page=posts.prev_num) \
         if posts.has_prev else None
     return render_template('index.html', title=_('Ноme'),
-                           posts=posts.items, next_url=next_url,
+                           posts1=posts.items[:len(posts.items)//2],posts2=posts.items[len(posts.items)//2:], next_url=next_url,
                            prev_url=prev_url, user=user, form=form)
 
 

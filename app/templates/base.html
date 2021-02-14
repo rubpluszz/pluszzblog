@@ -12,7 +12,7 @@
       {% endif %}
     </title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=2.232 ) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=2.285) }}">
 
   </head>
 
@@ -45,6 +45,7 @@
               <a href="{{ url_for('main.index') }}">
                  {{ _("About") }}
               </a>
+            </li>
             <li class="navbar-li cooperation navbar-menu" id="cooperation">
               <a href="{{ url_for('main.index') }}">
                  {{ _("Cooperation") }}
@@ -75,13 +76,12 @@
           </ul>
         </div>
       </nav>
-     
 
 
 
-    <div class="content">
-      <div>
-        <h1>{{ title }}</h1>
+      <div class="content">
+        <div>
+          <h1>{{ title }}</h1>
           {% with messages = get_flashed_messages() %}
             <br>
             {% if messages %}
@@ -90,40 +90,30 @@
               {% endfor %}
             {% endif %}
           {% endwith %}
-      </div>
-    <div class="container">
-      <div class="application-content" id="application-content">
-        {# application content needs to be provided in the app_content block #}
-        {% block app_content %}{% endblock %}
-      </div>
-      <div class="post-tytle-block"  align="left">
-                
-        {% for post in posts %}
-          <div>
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.body}}</p>
-          </div>
-
-        {% endfor %}
-        <br>
-
-      </div>
-    </div>
-    </div>
-    <br>
-    <br>
-    <div>
-        <div class="fixed-sm-bottom">
-            <br>
-            <p align="center">{{ _('Contacts for cooperation: ') }}<a href="mailto:pluszz@gmail.com">pluszz@gmail.com</a></p>
-            <p align="center">© 2021 Pluszz</p>
         </div>
-    </div>
+        <div class="container">
+          <div class="application-content" id="application-content">
+            {# application content needs to be provided in the app_content block #}
+            {% block app_content %}{% endblock %}
+          </div>
+        </div>
+          <div>
+            <div class="fixed-sm-bottom">
+              <br>
+              <p align="center">{{ _('Contacts for cooperation: ') }}<a href="mailto:pluszz@gmail.com">pluszz@gmail.com</a></p>
+              <p align="center">© 2021 Pluszz</p>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+
+ 
     <script type="text/javascript">
       {{ moment.include_moment() }}
       {{ moment.lang(g.locale) }}
     </script>
- </div>
+
   </body>
 
 
