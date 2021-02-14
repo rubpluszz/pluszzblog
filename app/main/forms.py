@@ -28,13 +28,16 @@ class EmptyForm(FlaskForm):
 
 
 class PostForm(FlaskForm):
-    post_title = StringField(_l("Post Title"), validators=[DataRequired()])
-    post_section = StringField(_l("Post Section"), validators=[DataRequired()])
-    description = StringField(_l("Post Description"), validators=[DataRequired()])
+    post_title = StringField(_l('Post Title'), validators=[DataRequired()])
+    post_section = StringField(_l('Post Section'), validators=[DataRequired()])
+    description = StringField(_l('Post Description'), validators=[DataRequired()])
     post = TextAreaField(_l('Say Something'), validators=[DataRequired()])
     title_image = StringField(_l('Title Image'), validators=[DataRequired()])
     submit = SubmitField(_l('Submit'))
 
+class CommentsForm(FlaskForm):
+    comment = TextAreaField(_l('Write your comment'), validators=[DataRequired()])
+    submit = SubmitField(_l('Submit'))
 
 
 class SearchForm(FlaskForm):

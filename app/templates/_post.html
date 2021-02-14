@@ -1,25 +1,22 @@
                 <div class="col-md-5" align="left" style="padding: 30px" >
                      
-                    <div class="col-md-6" style="background: #8B432D;color:#F4F3EE;font-size:10px;border-radius: 3px 3px 3px 3px;">
-
-                                {{ post.section }}
+                    <div class="col-md-10" id="section-timestamp " style="background: #8B432D;color:#F4F3EE;font-size:10px;border-radius: 3px 3px 3px 3px;">
+                                <div class="col-md-5" id="section">
+                                    {{ post.section }}
+                                </div>
+                                <div class="col-md-5" id="timestamp" align="right" style="background:#463f3a">
+                                    {{ moment(post.timestamp).fromNow() }}
+                                </div>
                     </div>
                     <br>  
-                    <div class="col-md-10" style="background:#F4F3EE;
-                                border-radius: 20px" >
+                    <div class="row" style="background:#F4F3EE;
+                                border-radius: 20px; height:150" >
                  
-                    <div class="row col-md-8 border"align="left">
+                    <div class="row "align="left" style="padding-right: 20px; height:150; width:250; |">
 
-                            <h4 class="featurette-heading"
-                                {% if post.id%2== 0 %}
-                                    align="left" 
-                                {% else %}
-                                    align="left" 
-                                {% endif %}
-                                    style="color:#8B432D">
-                                
+                            <h4 class="featurette-heading" align="left" style="color:#8B432D">            
                                 <b>
-                                    {{ post.title }}.
+                                    <a href="{{ url_for('main.post', post_id=post.id) }}">{{ post.title }}.</a>
                                 </b>
                             </h4>
                             <p>
@@ -27,9 +24,9 @@
                             </p>
                         </div>
         
-                        <div class="row ncol-md-5 col-md-pull-7 " 
+                        <div class="post-title-image" id="title_image{{ post.id }}"
                             align="right">
-                            <img class="featurette-image img-responsive center-block" align="right" data-src="holder.js/500x500/auto" alt="500x500" src="{{ post.title_image}}" data-holder-rendered="true" width="150" height="250" style="border-radius: 0px 20px 20px 0px">
+                            <img class="featurette-image img-responsive center-block" align="right" data-src="holder.js/500x500/auto" alt="500x500" src="{{ post.title_image}}" data-holder-rendered="true" style="border-radius: 0px 20px 20px 0px; width: 100px; height: 210px; align-content:left;">
                         </div>
                     </div>
                 </div>

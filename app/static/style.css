@@ -1,0 +1,88 @@
+body{
+	background: #242423;
+    font-family: Sans Serif,"Droid Sans", "Times New Roman",
+          Times, serif;
+    font-style: italic;
+    font-color:#0A1128;
+}
+
+
+
+.navbar{
+	position: fixed;
+	z-index: 9999;
+	top:0;
+	left:0; 
+	right:0;
+	height: 80px; 
+	width:100%; 
+	background:#F5CB5C; 
+	font-weight: bold; 
+}
+
+li.login-logout{
+	position: fixed;
+	top: 33px;
+	right: 30px;
+	
+}
+
+li.navbar-menu{
+	top: -70px;
+	position: relative;
+}
+
+li.navbar-li{
+	display: inline;
+	padding-left: 14px
+}
+
+li.navbar-brand-img{
+ 	position: relative;
+ 	left: 5px;
+ 	top: 5px;
+ }
+
+.navbar-li>a{
+	color: #333533;
+}
+
+li.search-field{
+	position: fixed;
+	right: 120px;
+	top: 20px;
+}
+
+#logo-image{
+	width: 150px;
+}
+
+.search-field{
+    border-color: #CED4DA;
+}
+
+h1{
+    color:#F5CB5C;
+    padding-left:15px;
+    font-weight: bold; 
+}
+
+div.post-tytle-block{
+	color:#F4F3EE;
+	background:#463F3A;
+	border-radius: 20px 20px 20px 20px""
+}
+
+div.fixed-sm-bottom{
+	background:#F5CB5C;
+	color: #242423 
+}
+
+.content{
+	background: #333533;
+	margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+
+
+}

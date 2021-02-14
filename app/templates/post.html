@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+	<div class="col-md-9 " align="left" id="post_body">
+		{{ post.body }}
+	</div>
+	<br>
+	<br>
+	<div class="col-md-9 " align="left" id="comments">
+		{% if not current_user.is_anonymous %}
+			{{ wtf.quick_form(form) }}
+		{% endif %}
+		{{ post.body }}
+		{% for comment in comments %}
+			{{ comment.body }}
+			<br/>
+			<br/>
+		{% endfor %}
+	</div>
+{% endblock %}
+<
