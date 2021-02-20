@@ -13,7 +13,8 @@ from app.main.forms import PostForm, CommentsForm
 
 @bp.route('/', methods=['GET', 'POST'])
 @bp.route('/index', methods=['GET', 'POST'])
-def index():
+@bp.route('/blog', methods=['GET', 'POST'])
+def blog():
     form = PostForm()
     user = current_user
     if form.validate_on_submit():
@@ -29,15 +30,23 @@ def index():
         db.session.add(post)
         db.session.commit()
         return redirect(url_for('main.index'))
+    selected_posts = db.session.query(Post).filter(Post.selected_posts==1).all()
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.timestamp.desc()).paginate(
         page, current_app.config['POSTS_PER_PAGE'], False)
-    next_url = url_for('main.explore', page=posts.next_num) \
+    next_url = url_for('main.blog', page=posts.next_num) \
         if posts.has_next else None
-    prev_url = url_for('main.explore', page=posts.prev_num) \
+    prev_url = url_for('main.blog', page=posts.prev_num) \
         if posts.has_prev else None
-    return render_template('index.html', title=_('Ноme'),
-                           posts1=posts.items[:len(posts.items)//2],posts2=posts.items[len(posts.items)//2:], next_url=next_url,
+    posts1=[]#Posts in first column
+    posts2=[]#Posts in second column
+    for post in posts.items:
+        if post.id%2==1:
+            posts1.append(post)
+        else:
+            posts2.append(post)
+    return render_template('index.html', title='PluszzBlog',
+                           posts1=posts1 ,posts2=posts2, selected_posts=selected_posts, next_url=next_url,
                            prev_url=prev_url, user=user, form=form)
 
 

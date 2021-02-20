@@ -12,40 +12,42 @@
       {% endif %}
     </title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=2.317) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=3.003) }}">
 
   </head>
 
-  <body>
-    <div class="static-background" style="background: url({{url_for('static', filename='background.jpg')}}); width:100%; height:100%; background-attachment: fixed;
+  <body class="static-background" style="background: url({{url_for('static', filename='background.jpg')}}); width:100%; height:100%; background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;">
+    background-size: cover;
+    font-family: Nimbus Sans Narrow,'Droid Sans', monospace;
+    font-style: italic;
+    font-color:#0A1128;">
 
       <nav class="navbar" id="navbar">
         <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
           <div class="navbar-li navbar-brand-img">
-              <a class="navbar-brand" href="{{ url_for('main.index') }}">
+              <a class="navbar-brand" href="{{ url_for('main.blog') }}">
                 <img id="logo-image" src="{{ url_for('static', filename='logo.png') }}">
               </a>
           </div>
           <div class="navbar-li blog-link navbar-menu" id="blog-link">
-              <a href="{{ url_for('main.index') }}">
-                 {{ _("Blog")}}
+              <a href="{{ url_for('main.blog') }}">
+                 {{ _("Sections")}}
               </a>
           </div>
           <div class="navbar-li my_projects navbar-menu" id="my_projects">
-              <a href="{{ url_for('main.index') }}">
+              <a href="{{ url_for('main.blog') }}">
                  {{ _("My Projects") }}
               </a>
           </div>
           <div class="navbar-li about navbar-menu" id="about">
-              <a href="{{ url_for('main.index') }}">
+              <a href="{{ url_for('main.blog') }}">
                  {{ _("About") }}
               </a>
           </div>
           <div class="navbar-li cooperation navbar-menu" id="cooperation">
-              <a href="{{ url_for('main.index') }}">
+              <a href="{{ url_for('main.blog') }}">
                  {{ _("Cooperation") }}
               </a>
           </div>
@@ -54,31 +56,51 @@
           </div>
             {% if not current_user.is_anonymous %}
           <div class="navbar-li current_user navbar-menu" id="current_user">
-                <a href="{{ url_for('main.index') }}">
+                <a href="{{ url_for('main.blog') }}">
                    {{ current_user.username }}
                 </a>
+                        </div>
             {% endif %}
-          </div>
+
           <div class="navbar-li  login-logout" id="login-logout" align="right">
-              <a href="
                 {% if current_user.is_anonymous %}
-                    {{ url_for('auth.login') }}">
-                    {{ _('Login') }}
+                    <a href="{{ url_for('auth.login') }}">
+                    {{ _('Login') }}</a>
                 {% else %}
-                    {{ url_for('auth.logout') }}">
-                    {{ _('Logout') }}
+                     <a href="{{ url_for('auth.logout') }}">
+                    {{ _('Logout') }}</a>
                 {% endif %}
-              </a>
           </div>
         </div>
       </nav>
+      <div class="selected-posts-panel" id="selected-posts-panel">
+        {% for post in selected_posts %}
+          <div class="selected-post" id="selected_post-{{ post.id}}">
+            <div class="selected-post-section">
+              <b>{{ post.section }}</b>
+            </div>
+            <div class="selected-post-img" id="selected_post_img-{{ post.id }}">
+              <a href="{{ url_for('main.post', post_id=post.id) }}">
+                <img src="{{ post.title_image }}" class="selected-post-image">
+              </a>
+            </div>  
+            <div class="selected-post-title">
+              <a href="{{ url_for('main.post', post_id=post.id) }}">
+                <b>{{ post.title }}</b></a>            
+            </div>
+          </div>
+           
+        {% endfor %}
+      </div>
+
+
+
 
 
 
       <div class="content">
         <div>
-          <h1>{{ title }}</h1>
-          {% with messages = get_flashed_messages() %}
+            {% with messages = get_flashed_messages() %}
             <br>
             {% if messages %}
               {% for message in messages %}
