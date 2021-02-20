@@ -54,9 +54,11 @@ li.navbar-menu{
 	position: relative;
 }
 
-li.navbar-li{
-	display: inline;
-	padding-left: 14px
+.navbar-collapse{
+	margin:2em;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 li.navbar-brand-img{
@@ -176,7 +178,7 @@ img.featurette-image{
 	align-content: right;
 }
 
-.index-post-form{
+.in-form{
 	display: flex;
 	flex-direction: column;
 	color:#F5CB5C;

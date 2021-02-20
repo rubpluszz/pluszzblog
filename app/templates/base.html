@@ -12,7 +12,7 @@
       {% endif %}
     </title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=2.311) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=2.317) }}">
 
   </head>
 
@@ -24,44 +24,42 @@
 
       <nav class="navbar" id="navbar">
         <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            
-            <li class="navbar-li navbar-brand-img">
+          <div class="navbar-li navbar-brand-img">
               <a class="navbar-brand" href="{{ url_for('main.index') }}">
                 <img id="logo-image" src="{{ url_for('static', filename='logo.png') }}">
               </a>
-            </li>
-            <li class="navbar-li blog-link navbar-menu" id="blog-link">
+          </div>
+          <div class="navbar-li blog-link navbar-menu" id="blog-link">
               <a href="{{ url_for('main.index') }}">
                  {{ _("Blog")}}
               </a>
-            </li>
-            <li class="navbar-li my_projects navbar-menu" id="my_projects">
+          </div>
+          <div class="navbar-li my_projects navbar-menu" id="my_projects">
               <a href="{{ url_for('main.index') }}">
                  {{ _("My Projects") }}
               </a>
-            </li>
-            <li class="navbar-li about navbar-menu" id="about">
+          </div>
+          <div class="navbar-li about navbar-menu" id="about">
               <a href="{{ url_for('main.index') }}">
                  {{ _("About") }}
               </a>
-            </li>
-            <li class="navbar-li cooperation navbar-menu" id="cooperation">
+          </div>
+          <div class="navbar-li cooperation navbar-menu" id="cooperation">
               <a href="{{ url_for('main.index') }}">
                  {{ _("Cooperation") }}
               </a>
-            </li>
-            <li class="navbar-li search-field " id="search">
+          </div>
+          <div class="navbar-li search-field " id="search">
               <input type="search" name="q" placeholder="Search"> 
-            </li>
+          </div>
             {% if not current_user.is_anonymous %}
-            <li class="navbar-li current_user navbar-menu" id="current_user">
+          <div class="navbar-li current_user navbar-menu" id="current_user">
                 <a href="{{ url_for('main.index') }}">
                    {{ current_user.username }}
                 </a>
             {% endif %}
-            </li>
-            <li class="navbar-li  login-logout" id="login-logout" align="right">
+          </div>
+          <div class="navbar-li  login-logout" id="login-logout" align="right">
               <a href="
                 {% if current_user.is_anonymous %}
                     {{ url_for('auth.login') }}">
@@ -71,9 +69,7 @@
                     {{ _('Logout') }}
                 {% endif %}
               </a>
-            </li>
-
-          </ul>
+          </div>
         </div>
       </nav>
 

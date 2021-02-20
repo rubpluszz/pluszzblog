@@ -228,7 +228,7 @@ class Post(db.Model):
     version = db.Column(db.Integer, default=0)#Sestem posts version control
     language = db.Column(db.String(10), index=True)
     title_image = db.Column(db.String(140))
-    description = db.Column(db.String(140))#description post
+    description = db.Column(db.String(160))#description post
 
     def vievs_upper():
         self.vievs = self.c.vievs + 1
