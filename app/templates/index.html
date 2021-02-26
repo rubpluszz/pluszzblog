@@ -4,7 +4,7 @@
 {% block app_content %}
 					<div class="title-end-discription-block-h1">
                       <h1>PluszzBlog</h1>
-                      <div class="discription-this-page-inborder">
+                      <div class="discription-this-page-inborder discription-page">
                         {{ _('This is the main page of this blog. Here 
                               you can see a list of all posts without 
                               division into sections. Thank you for visiting me.') }}
@@ -17,27 +17,27 @@
                             <form action="" method="post" class="in-form" novalidate>
                               {{ form.hidden_tag() }}
                               {{ form.post_title.label }}
-                              {{ form.post_title(size=100) }}
+                              {{ form.post_title(size=100, class="editable_pole") }}
                               {% for error in form.post_title.errors %}
                                 <span class="discription-this-page-inborder">[{{ error }}]</span>
                               {% endfor %}
                               {{ form.post_section.label }}
-                              {{ form.post_section(size=100) }}
+                              {{ form.post_section(size=100, class="editable_pole") }}
                               {% for error in form.post_section.errors %}
                                 <span class="discription-this-page-inborder">[{{ error }}]</span>
                               {% endfor %}
                               {{ form.description.label }}
-                              {{ form.description(size=100) }}
+                              {{ form.description(size=100, class="editable_pole") }}
                               {% for error in form.description.errors %}
                                 <span class="discription-this-page-inborder">[{{ error }}]</span>
                               {% endfor %}
                               {{ form.post.label }}
-                              {{ form.post(rows='20')}}
+                              {{ form.post(rows='20', class="editable_pole")}}
                               {% for error in form.post.errors %}
                                 <span class="discription-this-page-inborder">[{{ error }}]</span>
                               {% endfor %}
                               {{ form.title_image.label }} 
-                              {{ form.title_image(size=100)}}
+                              {{ form.title_image(size=100, class="editable_pole")}}
                               {% for error in form.title_image.errors %}
                                 <span class="discription-this-page-inborder">[{{ error }}]</span>
                               {% endfor %}                            

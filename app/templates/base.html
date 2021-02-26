@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ locale }}">
+{% extends 'bootstrap/base.html' %}
+
+{% block html %}
   <head>
     <meta charset="utf-8">
     <link rel="icon" href="{{ url_for('static', filename='favikon.png') }}" >
@@ -12,7 +13,7 @@
       {% endif %}
     </title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=3.003) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=3.415) }}">
 
   </head>
 
@@ -128,11 +129,12 @@
 
  
     <script type="text/javascript">
+      {{ super() }}
+      {{ moment.include_jquery() }}
       {{ moment.include_moment() }}
       {{ moment.lang(g.locale) }}
     </script>
 
   </body>
 
-
-</html>
+{% endblock html %}

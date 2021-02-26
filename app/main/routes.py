@@ -6,7 +6,7 @@ from flask_login import current_user, login_required
 from flask_babel import _, get_locale
 from guess_language import guess_language
 from app import db
-from app.models import User, Post, Comments
+from app.models import User, Post, Comments, likes_table_comments
 from app.translate import translate
 from app.main import bp
 from app.main.forms import PostForm, CommentsForm
@@ -55,14 +55,37 @@ def post(post_id):
     form = CommentsForm()
     user = current_user
     post = Post.query.filter_by(id=post_id).first()
-    if form.validate_on_submit:
-        comment = Comments(body=form.comment.data, user_id=user.id, post_id=post_id)
+    if form.validate_on_submit() and form.comment.data!=None:
+        comment = Comments(body=form.comment.data, user_id=user.id, post_id=post.id)
         db.session.add(comment)
         db.session.commit()
-        form.comment.data=''#clear comment field
+        form.comment.data = ''#clear comment field
+        return redirect('{}'.format(str(post_id)))
     page = request.args.get('page', 1, type=int)
-    comments=Comments.query.filter_by(post_id=post.id).paginate(page, current_app.config['COMMENTS_PER_PAGE'], False)
+    comments = Comments.query.filter_by(post_id=post_id).order_by(Comments.timestamp.desc()).paginate(
+        page, current_app.config['POSTS_PER_PAGE'], False)
     next_url = url_for('main.post',post_id=post_id, page=comments.next_num) if comments.has_next else None
     prev_url = url_for('main.post',post_id=post_id, page=comments.prev_num) if comments.has_prev else None
     locale = get_locale()
-    return render_template('post.html', title=post.title, post=post, next_url=next_url, prev_url=prev_url, form=form, comments=comments.items, locale=locale)
+    return render_template('post.html', User=User, Comments=Comments, likes_table_comments=likes_table_comments, 
+                            title=post.title, post=post, next_url=next_url, prev_url=prev_url, form=form, db=db, 
+                            comments=comments, locale=locale, user=user)
+
+
+@bp.route('/like_comment/<int:comment_id>/<int:post_id>')
+@login_required
+def like_comment(comment_id, post_id):
+    comment = Comments.query.filter_by(id=comment_id).first_or_404()
+    current_user.like_this_comments(comment)
+    db.session.commit()
+    return redirect(url_for('main.post', post_id=post_id))    
+
+
+@bp.route('/dislike_comment/<int:comment_id>/<int:post_id>')
+@login_required
+def dislike_comment(comment_id, post_id):
+    comment = Comments.query.filter_by(id=comment_id).first_or_404()
+    current_user.dislike_this_comments(comment)
+    db.session.commit()
+    return redirect(url_for('main.post', post_id=post_id)) 
+

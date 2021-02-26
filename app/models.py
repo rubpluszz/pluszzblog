@@ -140,7 +140,7 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
 
 
     def avatar(self, size):
-        digest = md5(self.mail.lower().encode('utf-8')).hexdigest()
+        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
         return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, size)
 
 
@@ -178,21 +178,21 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
 
 
 
-    def like_this_comments(self, comments):
-        if not self.this_comments_liked(comments):
-            if self.this_comments_disliked(comments):
-                self.disliked_comments.remove(comments)
+    def like_this_comments(self, comment):
+        if not self.this_comments_liked(comment):
+            if self.this_comments_disliked(comment):
+                self.disliked_comments.remove(comment)
             else: 
-                self.liked_comments.append(comments)
+                self.liked_comments.append(comment)
 
 
 
-    def dislike_this_comments(self, comments):
-        if not self.this_comments_disliked(comments):
-            if self.this_comments_liked(comments):
-                self.liked_comments.remove(comments)
+    def dislike_this_comments(self, comment):
+        if not self.this_comments_disliked(comment):
+            if self.this_comments_liked(comment):
+                self.liked_comments.remove(comment)
             else:
-                self.disliked_comments.append(comments)
+                self.disliked_comments.append(comment)
 
 
 
@@ -247,7 +247,12 @@ class Comments(db.Model):
     likes = db.Column(db.Integer, default=0)
     dislikes = db.Column(db.Integer, default=0)
 
-    
+    def coin_likes(self,):
+        return db.session.query(likes_table_comments).filter(likes_table_comments.c.id_comments == self.id).count() 
+
+    def coin_dislikes(self,):
+        return db.session.query(dislikes_table_comments).filter(dislikes_table_comments.c.id_comments == self.id).count() 
+
     def __repr__(self):
         return '<Comments {}>'.format(self.body)
 
@@ -267,4 +272,9 @@ class PrivateMessages(db.Model):
 
 @login.user_loader
 def load_user(id):
+    user=User.query.filter_by(id=id).first()
+    user.last_seen = datetime.utcnow()
+    db.session.add(user)
+    db.session.commit()
     return User.query.get(int(id))
+
