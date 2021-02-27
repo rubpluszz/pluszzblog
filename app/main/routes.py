@@ -55,6 +55,7 @@ def post(post_id):
     form = CommentsForm()
     user = current_user
     post = Post.query.filter_by(id=post_id).first()
+    selected_posts = db.session.query(Post).filter(Post.selected_posts==1).all()
     if form.validate_on_submit() and form.comment.data!=None:
         comment = Comments(body=form.comment.data, user_id=user.id, post_id=post.id)
         db.session.add(comment)
@@ -69,7 +70,7 @@ def post(post_id):
     locale = get_locale()
     return render_template('post.html', User=User, Comments=Comments, likes_table_comments=likes_table_comments, 
                             title=post.title, post=post, next_url=next_url, prev_url=prev_url, form=form, db=db, 
-                            comments=comments, locale=locale, user=user)
+                            comments=comments, locale=locale, user=user, selected_posts=selected_posts)
 
 
 @bp.route('/like_comment/<int:comment_id>/<int:post_id>')
@@ -89,3 +90,22 @@ def dislike_comment(comment_id, post_id):
     db.session.commit()
     return redirect(url_for('main.post', post_id=post_id)) 
 
+@bp.route("/about")
+def about():
+    selected_posts = db.session.query(Post).filter(Post.selected_posts==1).all()
+    return render_template('about.html', selected_posts=selected_posts)
+
+@bp.route("/projects")
+def projects():
+    selected_posts = db.session.query(Post).filter(Post.selected_posts==1).all()
+    return render_template('projects.html', selected_posts=selected_posts)
+
+@bp.route("/section")
+def section():
+    selected_posts = db.session.query(Post).filter(Post.selected_posts==1).all()
+    return render_template('section.html', selected_posts=selected_posts)
+
+@bp.route("/cooperation")
+def cooperation():
+    selected_posts = db.session.query(Post).filter(Post.selected_posts==1).all()
+    return render_template('coperation.html', selected_posts=selected_posts)

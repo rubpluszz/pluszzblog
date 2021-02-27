@@ -13,7 +13,7 @@
       {% endif %}
     </title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=3.415) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=3.418) }}">
 
   </head>
 
@@ -33,22 +33,22 @@
               </a>
           </div>
           <div class="navbar-li blog-link navbar-menu" id="blog-link">
-              <a href="{{ url_for('main.blog') }}">
+              <a href="{{ url_for('main.section') }}">
                  {{ _("Sections")}}
               </a>
           </div>
           <div class="navbar-li my_projects navbar-menu" id="my_projects">
-              <a href="{{ url_for('main.blog') }}">
+              <a href="{{ url_for('main.projects') }}">
                  {{ _("My Projects") }}
               </a>
           </div>
           <div class="navbar-li about navbar-menu" id="about">
-              <a href="{{ url_for('main.blog') }}">
+              <a href="{{ url_for('main.about') }}">
                  {{ _("About") }}
               </a>
           </div>
           <div class="navbar-li cooperation navbar-menu" id="cooperation">
-              <a href="{{ url_for('main.blog') }}">
+              <a href="{{ url_for('main.cooperation') }}">
                  {{ _("Cooperation") }}
               </a>
           </div>
