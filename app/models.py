@@ -143,7 +143,10 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
         return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, size)
 
-
+    def liked_posts(self):
+        liked = self.liked_post.all()
+        print(liked)
+        return liked
     def this_post_liked(self, post):
         return self.liked_post.filter(likes_table_posts.c.id_post == post.id).count() > 0
 
@@ -230,6 +233,13 @@ class Post(db.Model):
     title_image = db.Column(db.String(140))
     description = db.Column(db.String(160))#description post
     selected_posts = db.Column(db.Boolean)
+
+    def coin_likes(self,):
+        return db.session.query(likes_table_posts).filter(likes_table_posts.c.id_post == self.id).count() 
+
+    def coin_dislikes(self,):
+        return db.session.query(dislikes_table_posts).filter(dislikes_table_posts.c.id_post == self.id).count() 
+
 
     def vievs_upper():
         self.vievs = self.c.vievs + 1

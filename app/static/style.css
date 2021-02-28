@@ -80,6 +80,7 @@ h1{
 div.fixed-sm-bottom{
 	background:#F5CB5C;
 	color: #242423;
+	margin-top: 4em;
 	padding-top: 12px;
 	padding-bottom:100px;
 
@@ -169,10 +170,13 @@ div.post_title-post_discription{
 }
 
 h4.featurette-heading{
-    color:#242423;
+    color:#F5CB5C;
     margin-top: 5px;
     margin-bottom: 5px;
+    margin-right: auto;
+    margin-left: auto;
 }
+
 
 img.featurette-image{
 	border-radius: 0px 20px 20px 0px;
@@ -296,12 +300,6 @@ img.featurette-image{
 	flex-direction:row;
 }
 
-.control-pager>a{
-	color:#F5CB5C; 
-	border: 6px double #F5CB5C; 
-	text-decoration:none; 
-	border-radius: 10px;
-}
 
 .in-post-image{
 	border-radius:10px 10px 10px 10px;
@@ -459,6 +457,7 @@ img.featurette-image{
 
 
 .likes-table{	
+	color: #333533;
 	display: flex;
 	flex-direction: row;
 	width: 97%;
@@ -487,4 +486,65 @@ img.featurette-image{
 	width: 20em;
 	margin-top: 4em;
 	margin-bottom: 4em;
+}
+
+.user_table_in_user_page{
+	margin-bottom: 8em;
+	display: flex;
+	flex-direction: row;
+	background: #333533;
+	color: #F5CB5C;
+	border: 3px solid #F5CB5C;
+	border-radius:10px;
+}
+
+
+.avatar-in-user-page{
+	margin-bottom: 2em;
+    margin-top: 2em;
+	margin-left: 2em;
+	margin-right: 5em;
+	border: 3px solid #F5CB5C;
+	border-radius:10px;
+
+}
+
+.user-information-in-usertable a{
+	color: #F5CB5C;
+}
+
+a.user-page-button{
+	font-color: #242423;
+	background: #F5CB5C;
+	margin: 20px;
+	border-radius:15px;
+	padding: 7px;
+	font-weight:bold;
+}
+
+a.user-page-button-disabled{
+	font-color: #333533;
+	background: #242423;
+	margin: 20px;
+	border-radius:15px;
+	padding: 7px;
+	font-weight:bold;
+}
+
+a.user-page-button:hover{
+	background: #242423;
+	margin: 20px;
+	border-radius:15px;
+	padding: 7px;
+	font-weight:bold;
+	color: #F5CB5C;
+}
+
+a.next-disabled{
+	font-color:#CFDBD5;
+}
+
+a.previous-disabled{
+	font-color:#CFDBD5;color:#CFDBD5;
+
 }

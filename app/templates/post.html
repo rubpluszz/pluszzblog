@@ -12,8 +12,31 @@
 	  <div class="post-body"  id="post_body">
 	  	<div class="post-text">
 			{{ post.body }}
+			<div class="likes-table">
+			  <div class="likes-display">
+                {% if user.this_post_disliked(post) %}
+                  You <b>don't</b> like this post 
+                {% else %}
+                  This post like {% if user.this_post_liked(post) %} 
+                                    <b>you and </b>{{ post.coin_likes()-1 }}
+                                 {% else %} 
+                                    {{ post.coin_likes()}}
+                                 {% endif %}
+                                    user{% if post.coin_likes()-1%10!=1  %}s{% endif %} 
+                                 {% endif %}
+             </div>
+               <div class="container">
+                 <div  class="like-form">
+                   {{ post.coin_likes() }} <a class="like-button" href="{{ url_for('main.like_post', post_id=post.id) }}"> ▲ like </a>
+                 </div>
+                 <div  class="like-form">
+                   {{ post.coin_dislikes() }} <a class="like-button" href="{{ url_for('main.dislike_post', post_id=post.id) }}"> ▼ dislike </a>
+                 </div>
+               </div>
+            </div>
 		</div>
 	  </div>
+	</div>
 
 	  <div class="comments" id="comments">
 		{% if not current_user.is_anonymous %}
@@ -37,20 +60,15 @@
 			<br>
 			<br>
 		  {% endfor %}
-		  <ul class="index-pager pager" id="index-pager">
-            <li class="previous{% if not prev_url %} disabled{% endif %} control-pager">
-			  <a href="{{ prev_url or '#' }}"S>
+		  <div class="index-pager pager" id="index-pager">
+			  <a class="user-page-button{% if next_url==None %}-disabled{% endif %}" href="{{ prev_url or '#' }}"S>
 			    <span aria-hidden="true" ">&larr;</span> {{ _('Newer comments') }}
               </a>
-            </li>
-            <li class="next{% if not next_url %} disabled{% endif %} control-pager">
-              <a href="{{ next_url or '#' }}">
+              <a class="user-page-button{% if next_url==None %}-disabled{% endif %}" href="{{ next_url or '#' }}">
                  {{ _('Older comments') }} <span aria-hidden="true">&rarr;</span>
               </a>
-            </li>
-          </ul>
+          </div>
 	    </div>
 	  </div>
-
 	</div>
 {% endblock %}

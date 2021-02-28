@@ -9,7 +9,7 @@ from app import db
 from app.models import User, Post, Comments, likes_table_comments
 from app.translate import translate
 from app.main import bp
-from app.main.forms import PostForm, CommentsForm
+from app.main.forms import PostForm, CommentsForm, EmptyForm
 
 @bp.route('/', methods=['GET', 'POST'])
 @bp.route('/index', methods=['GET', 'POST'])
@@ -72,6 +72,23 @@ def post(post_id):
                             title=post.title, post=post, next_url=next_url, prev_url=prev_url, form=form, db=db, 
                             comments=comments, locale=locale, user=user, selected_posts=selected_posts)
 
+@bp.route('/liked_post/<int:post_id>')
+@login_required
+def like_post( post_id):
+    post = Post.query.filter_by(id=post_id).first_or_404()
+    current_user.like_this_post(post)
+    db.session.commit()
+    return redirect(url_for('main.post', post_id=post_id))    
+
+
+@bp.route('/dislike_comment/<int:post_id>')
+@login_required
+def dislike_post( post_id):
+    post = Post.query.filter_by(id=post_id).first_or_404()
+    current_user.dislike_this_post(post)
+    db.session.commit()
+    return redirect(url_for('main.post', post_id=post_id)) 
+
 
 @bp.route('/like_comment/<int:comment_id>/<int:post_id>')
 @login_required
@@ -89,6 +106,7 @@ def dislike_comment(comment_id, post_id):
     current_user.dislike_this_comments(comment)
     db.session.commit()
     return redirect(url_for('main.post', post_id=post_id)) 
+  
 
 @bp.route("/about")
 def about():
@@ -109,3 +127,11 @@ def section():
 def cooperation():
     selected_posts = db.session.query(Post).filter(Post.selected_posts==1).all()
     return render_template('coperation.html', selected_posts=selected_posts)
+
+@bp.route('/user/<username>')
+def user(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    liked_posts= user.liked_posts()
+    form = EmptyForm()
+    page = request.args.get('page', 1, type=int)
+    return render_template('user_page.html', user=user, form=form ,liked_posts=liked_posts)

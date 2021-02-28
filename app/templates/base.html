@@ -13,13 +13,13 @@
       {% endif %}
     </title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=3.418) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=3.465) }}">
 
   </head>
 
   <body class="static-background" style="background: url({{url_for('static', filename='background.jpg')}}); width:100%; height:100%; background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat
     background-size: cover;
     font-family: Nimbus Sans Narrow,'Droid Sans', monospace;
     font-style: italic;
@@ -57,7 +57,7 @@
           </div>
             {% if not current_user.is_anonymous %}
           <div class="navbar-li current_user navbar-menu" id="current_user">
-                <a href="{{ url_for('main.blog') }}">
+                <a href="{{ url_for('main.user', username=current_user.username) }}">
                    {{ current_user.username }}
                 </a>
                         </div>

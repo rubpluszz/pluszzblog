@@ -3,12 +3,14 @@
 
 {% block app_content %}
     <h1>{{ _('Sign In') }}</h1>
-    <form class="login-form">
+    <form action="" class="login-form" method="post" novalidate="">
+            {{ form.hidden_tag() }}
             {{ form.username.label }}
             {{ form.username() }}
             {{ form.password.label }}
             {{ form.password() }}
-            <div>{{ form.remember_me() }} {{form.remember_me.label}} </div>
+            <div>{{ form.remember_me() }} {{ form.remember_me.label }} </div>
+            {{ form.submit() }}
     </form>
     <br>
     <div class=go-to-reg>
