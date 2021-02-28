@@ -68,6 +68,8 @@ def post(post_id):
     next_url = url_for('main.post',post_id=post_id, page=comments.next_num) if comments.has_next else None
     prev_url = url_for('main.post',post_id=post_id, page=comments.prev_num) if comments.has_prev else None
     locale = get_locale()
+    post.vievs_upper()
+    db.session.commit()
     return render_template('post.html', User=User, Comments=Comments, likes_table_comments=likes_table_comments, 
                             title=post.title, post=post, next_url=next_url, prev_url=prev_url, form=form, db=db, 
                             comments=comments, locale=locale, user=user, selected_posts=selected_posts)
@@ -129,9 +131,23 @@ def cooperation():
     return render_template('coperation.html', selected_posts=selected_posts)
 
 @bp.route('/user/<username>')
-def user(username):
+@bp.route('/user/<username>/<category>')
+@login_required
+def user(username, category="_favorite_posts"):
     user = User.query.filter_by(username=username).first_or_404()
-    liked_posts= user.liked_posts()
     form = EmptyForm()
     page = request.args.get('page', 1, type=int)
-    return render_template('user_page.html', user=user, form=form ,liked_posts=liked_posts)
+    page_to_vievs = category+".html"
+    if category=="_favorite_posts":
+        liked_posts = user.liked_posts().paginate(page, current_app.config['POSTS_PER_PAGE'], False)
+        next_url = url_for('main.blog', page=liked_posts.next_num) if liked_posts.has_next else None
+        prev_url = url_for('main.blog', page=liked_posts.prev_num) if liked_posts.has_prev else None
+    if category=="_recomendation":
+        liked_posts = db.session.query(Post).filter(Post.selected_posts==1).all()
+        next_url, prev_url = None, None 
+    return render_template('user_page.html', page_to_vievs=page_to_vievs, Comments=Comments, user=user, form=form ,liked_posts=liked_posts, prev_url=prev_url, next_url=next_url)
+
+
+
+
+

@@ -1,0 +1,28 @@
+<div class="user-content" id="favorite-osts">
+	{% for post in liked_posts %}
+	  <div class="index-post-list">
+	  	<div>
+		  {% include "_post.html" %}
+	    </div>
+	    <div class="user-information-in-usertable post-inf">
+	    	{% if user.this_post_disliked(post) %}
+                  {{ _("You") }}  <b>{{ _("don't like") }}</b> {{ _("this post") }}
+                {% else %}
+                  {{ _("This post like") }} {% if user.this_post_liked(post) %} 
+                                    <b>{{ _("you and") }} </b>{{ post.coin_likes()-1 }}
+                                 {% else %} 
+                                    {{ post.coin_likes()}}
+                                 {% endif %}
+                                    {{ _("user") }}{% if post.coin_likes()-1%10!=1  %}{{ _("s") }}{% endif %} 
+                                 {% endif %}
+                                 <br>
+            {{ _("This post has been read") }} {{ post.vievs }} {{ _("times") }}
+            <br>
+            {{ _("This post has been commented time  ")}} {{Comments.query.filter_by(post_id=post.id).count()}} {{ _("times") }}
+	    </div>
+	  </div>
+	  <hr>
+	{% endfor %}
+	
+</div>
+

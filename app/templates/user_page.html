@@ -7,13 +7,14 @@
           <div class="user-information-in-usertable">
             <h1>{{ user.username }}</h1>
             {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
-            <p>{{ _("Registration") }}: {{ moment(user.regidtretion_time).format('LLL') }}</p>
+            <p>{{ _('Registration') }}: {{ moment(user.regidtretion_time).format('LLL') }}</p>
             {% if user.last_seen %}
               <p>{{ _('Last seen on') }}: {{ moment(user.last_seen).format('LLL') }}</p>
             {% endif %}
             {% if user.status %}
  			  {{ user.username+" wants to say: " }} <b>{{ user.status }}</b>
  			{% endif %}
+ 			<p>{{ _('Reputation') }}:{{ user.reputation() }}</p>
  		  </div>
  			{% if user != curent_user %}
  			  <a class="user-page-button" href="{{ url_for('main.blog') }}">{{ _('Send message') }}</a>
@@ -21,18 +22,24 @@
         </div>
     </div>
 
-    <div class="user_table_in_user_page">
+    <div class="user_page_in_user_page">
+    	<div clas="user_menu" id="user_menu">
     	{% if user == current_user %}
             <a class="user-page-button" href="{{ url_for('main.blog') }}">{{ _('Edit your profile') }}</a>
-            <a class="user-page-button" href="{{ url_for('main.blog') }}">{{ _('Favorite posts') }}</a>
+            <a class="user-page-button" href="{{ url_for('main.user', username=user.username, category="_favorite_posts") }}">{{ _('Favorite posts') }}</a>
             <a class="user-page-button" href="{{ url_for('main.blog') }}">{{ _('Read later') }}</a>
-            <a class="user-page-button" href="{{ url_for('main.blog') }}">{{ _('Recomendation') }}</a>
+            <a class="user-page-button" href="{{ url_for('main.user', username=user.username, category="_recomendation") }}">{{ _('Recomendation') }}</a>
             <a class="user-page-button" href="{{ url_for('main.blog') }}">{{ _('messages') }}</a>
             {% if user.role %}
             	<a class="user-page-button" href="{{ url_for('main.blog') }}">{{ _('users') }}</a>
             {% endif %}
-        {% else %}
         {% endif %}
-        
+        <br>
+        <br>
+        <br>
+        <div>
+            {% include page_to_vievs %}
+        </div>    
     </div>
+</div>
 {% endblock %}

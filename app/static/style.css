@@ -520,6 +520,7 @@ a.user-page-button{
 	border-radius:15px;
 	padding: 7px;
 	font-weight:bold;
+	border: 3px solid #242423;
 }
 
 a.user-page-button-disabled{
@@ -529,6 +530,7 @@ a.user-page-button-disabled{
 	border-radius:15px;
 	padding: 7px;
 	font-weight:bold;
+	border: 3px solid #333533;
 }
 
 a.user-page-button:hover{
@@ -538,6 +540,7 @@ a.user-page-button:hover{
 	padding: 7px;
 	font-weight:bold;
 	color: #F5CB5C;
+	border: 3px solid #F5CB5C;
 }
 
 a.next-disabled{
@@ -547,4 +550,27 @@ a.next-disabled{
 a.previous-disabled{
 	font-color:#CFDBD5;color:#CFDBD5;
 
+}
+
+.user_page_in_user_page{
+	margin-bottom: 8em;
+	display: flex;
+	flex-direction: column;
+	background: #333533;
+	color: #F5CB5C;
+	border: 3px solid #F5CB5C;
+	border-radius:10px;
+	padding: 15px;
+}
+
+.user_menu{
+	display: flex;
+	flex-direction: row;
+	padding: 2em;
+	margin: 2em;
+}
+
+.post-inf{
+	padding-top: 4em;
+	padding-left: 4em;
 }

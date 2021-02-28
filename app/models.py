@@ -143,10 +143,16 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
         return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, size)
 
+
     def liked_posts(self):
-        liked = self.liked_post.all()
-        print(liked)
-        return liked
+
+        """This method returns all liked posts, ordered by time."""
+
+        return self.liked_post.filter(likes_table_posts.c.id_user == self.id).order_by(Post.timestamp.desc())
+       
+    def reputation(self):
+        return self.liked_comments.count()-self.disliked_comments.count()
+
     def this_post_liked(self, post):
         return self.liked_post.filter(likes_table_posts.c.id_post == post.id).count() > 0
 
@@ -241,8 +247,8 @@ class Post(db.Model):
         return db.session.query(dislikes_table_posts).filter(dislikes_table_posts.c.id_post == self.id).count() 
 
 
-    def vievs_upper():
-        self.vievs = self.c.vievs + 1
+    def vievs_upper(self):
+        self.vievs +=  1
     
     def __repr__(self):
         return '<Post {}>'.format(self.body)
