@@ -102,6 +102,11 @@ dislikes_table_comments = db.Table('dislikes_table_comments',
                         db.Column('id_comments', db.Integer, db.ForeignKey('comments.id'))
                         )
 
+read_later_table_posts = db.Table('read_later_table_posts', 
+                        db.Column('id_user', db.Integer, db.ForeignKey('user.id')),
+                        db.Column('id_post', db.Integer, db.ForeignKey('post.id'))
+                        )
+
 
 class User(UserMixin, PaginatedAPIMixin, db.Model):
 
@@ -123,6 +128,9 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
     disliked_comments = db.relationship('Comments', secondary=dislikes_table_comments,
                         primaryjoin=(dislikes_table_comments.c.id_user==id), 
                         backref=db.backref('disliker', lazy='dynamic'), lazy='dynamic')
+    read_later = db.relationship('Post', secondary=read_later_table_posts,
+                 primaryjoin=(read_later_table_posts.c.id_user==id),
+                 backref=db.backref('read_later', lazy='dynamic'), lazy='dynamic')
     last_seen = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     regidtretion_time = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
@@ -143,15 +151,28 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
         return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, size)
 
+    def to_read_later(self):
+
+        '''This method returns a list of posts postponed to later sorted by time.'''
+
+        return self.read_later.filter(read_later_table_posts.c.id_user == self.id).order_by(Post.timestamp.desc())
+
 
     def liked_posts(self):
 
         """This method returns all liked posts, ordered by time."""
 
         return self.liked_post.filter(likes_table_posts.c.id_user == self.id).order_by(Post.timestamp.desc())
-       
+      
+    
     def reputation(self):
+
+        """This method returns the user's reputation, which 
+        is equal to the difference between likes and dislikes"""
+
         return self.liked_comments.count()-self.disliked_comments.count()
+
+
 
     def this_post_liked(self, post):
         return self.liked_post.filter(likes_table_posts.c.id_post == post.id).count() > 0
@@ -240,12 +261,14 @@ class Post(db.Model):
     description = db.Column(db.String(160))#description post
     selected_posts = db.Column(db.Boolean)
 
-    def coin_likes(self,):
+    def coin_likes(self):
         return db.session.query(likes_table_posts).filter(likes_table_posts.c.id_post == self.id).count() 
 
-    def coin_dislikes(self,):
+    def coin_dislikes(self):
         return db.session.query(dislikes_table_posts).filter(dislikes_table_posts.c.id_post == self.id).count() 
 
+    def coin_read_later(self):
+        return db.session.query(read_later_table_posts).filter(read_later_table_posts.c.id_post == self.id).count()
 
     def vievs_upper(self):
         self.vievs +=  1

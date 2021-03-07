@@ -137,14 +137,18 @@ def user(username, category="_favorite_posts"):
     user = User.query.filter_by(username=username).first_or_404()
     form = EmptyForm()
     page = request.args.get('page', 1, type=int)
-    page_to_vievs = category+".html"
+    page_to_vievs = category+'.html'
     if category=="_favorite_posts":
         liked_posts = user.liked_posts().paginate(page, current_app.config['POSTS_PER_PAGE'], False)
         next_url = url_for('main.blog', page=liked_posts.next_num) if liked_posts.has_next else None
         prev_url = url_for('main.blog', page=liked_posts.prev_num) if liked_posts.has_prev else None
-    if category=="_recomendation":
+    if category=='_recomendation':
         liked_posts = db.session.query(Post).filter(Post.selected_posts==1).all()
         next_url, prev_url = None, None 
+    if category =='_read_later':
+        liked_posts = user.to_read_later().paginate(page, current_app.config['POSTS_PER_PAGE'], False)
+        next_url = url_for('main.blog', page=liked_posts.next_num) if liked_posts.has_next else None
+        prev_url = url_for('main.blog', page=liked_posts.prev_num) if liked_posts.has_prev else None
     return render_template('user_page.html', page_to_vievs=page_to_vievs, Comments=Comments, user=user, form=form ,liked_posts=liked_posts, prev_url=prev_url, next_url=next_url)
 
 
