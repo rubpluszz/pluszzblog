@@ -10,7 +10,7 @@
                                 <br>
                                 <div class="usr-information-in-comments" id="usr-inf-1" title="{{ User.query.filter_by(id=comment.user_id).first().status }}">
                                     <b>Registration:</b><br>
-                                    {{ moment(user.regidtretion_time).format('LL') }}<br>
+                                    {{ moment(user.registration_time).format('LL') }}<br>
                                     {% if user.last_seen %}
                                       <b>Last seen:</b><br>
                                       <div>{{ moment(user.last_seen).fromNow() }}</div>
@@ -23,7 +23,7 @@
                               
                               <div class="first-column">Comment is made at:</div>
                               <div class="last-column">
-                                {{ moment(user.regidtretion_time).format('LLL') }}
+                                {{ moment(user.registration_time).format('LLL') }}
                               </div>
                                 
                             </div>

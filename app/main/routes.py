@@ -38,15 +38,8 @@ def blog():
         if posts.has_next else None
     prev_url = url_for('main.blog', page=posts.prev_num) \
         if posts.has_prev else None
-    posts1=[]#Posts in first column
-    posts2=[]#Posts in second column
-    for post in posts.items:
-        if post.id%2==1:
-            posts1.append(post)
-        else:
-            posts2.append(post)
     return render_template('index.html', title='PluszzBlog',
-                           posts1=posts1 ,posts2=posts2, selected_posts=selected_posts, next_url=next_url,
+                           posts=posts, selected_posts=selected_posts, next_url=next_url,
                            prev_url=prev_url, user=user, form=form)
 
 
@@ -155,3 +148,7 @@ def user(username, category="_favorite_posts"):
 
 
 
+@bp.route("/messages")
+@login_required
+def messages():
+    pass

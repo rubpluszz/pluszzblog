@@ -132,11 +132,12 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
                  primaryjoin=(read_later_table_posts.c.id_user==id),
                  backref=db.backref('read_later', lazy='dynamic'), lazy='dynamic')
     last_seen = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    regidtretion_time = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    message_sent = db.relationship('PrivateMessages', foreign_keys='PrivateMessages.sender_id', backref='sender', lazy='dynamic')
+    messge_received = db.relationship('PrivateMessages', foreign_keys='PrivateMessages.recipient_id', backref='recipient', lazy='dynamic')
 
+    registration_time = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    last_message_red_time = db.Column(db.DateTime)
 
-    def __repr__(self):
-        return '<User {}>'.format(self.username)
 
 
     def set_password(self, password):
@@ -224,7 +225,10 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
             else:
                 self.disliked_comments.append(comment)
 
+    
 
+    def new_messages(self):
+        last_read_time = self.last_message_red_time or datetime(1900, 1, 1)
 
     def get_reset_password_token(self, expires_in=600):
         return jwt.encode(
@@ -241,6 +245,10 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
         except:
             return
         return User.query.get(id)
+
+    def __repr__(self):
+        return '<User {}>'.format(self.username)
+
 
 
 
@@ -269,6 +277,11 @@ class Post(db.Model):
 
     def coin_read_later(self):
         return db.session.query(read_later_table_posts).filter(read_later_table_posts.c.id_post == self.id).count()
+
+
+    def commented(self):
+        return Comments.query.filter_by(post_id=self.id).count()
+
 
     def vievs_upper(self):
         self.vievs +=  1
@@ -302,6 +315,7 @@ class PrivateMessages(db.Model):
     body = db.Column(db.Text)
     sender_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     recipient_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
     def __repr__(self):
         return 'PrivateMessages {}'.format(self.body)

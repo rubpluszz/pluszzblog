@@ -23,10 +23,36 @@
                             align="right">
                        <a href="{{ url_for('main.post', post_id=post.id) }}"><img class="featurette-image img-responsive" align="right" alt="500x500" src="{{ post.title_image }}" data-holder-rendered="true"></a>
                     </div>
-                  </div>
-                  <br><br>
+                  
                 </div>
-                
+                  <div class="information-posts">
+                    <div title="{{ _('likes') }}">
+                      <img src="{{ url_for('static', filename='like.png') }}" class="micro-icon">
+                      <div class="information-posts-text" > 
+                        <br>{{ post.coin_likes() }}
+                      </div>
+                    </div>
+                    <div title="{{ _('dislikes') }}">
+                      <img src="{{ url_for('static', filename='dislike.png') }}" class="micro-icon"> 
+                      <div class="information-posts-text">
+                        <br>{{ post.coin_dislikes() }}
+                      </div>
+                    </div>           
+                    <div title="{{ _('vievs') }}">
+                      <img src="{{ url_for('static', filename='eye.jpg') }}" class="micro-icon"> 
+                      <div class="information-posts-text">
+                        <br>{{ post.vievs }}
+                      </div>
+                    </div>
+                    <div title="{{ _('komments') }}">
+                      <img src="{{ url_for('static', filename='pero.png') }}" class="micro-icon"> 
+                      <div class="information-posts-text">
+                        <br>{{ post.commented() }}
+                      </div>
+                 </div>
+                <br>
+                </div>
+                </div>
 
   
                  

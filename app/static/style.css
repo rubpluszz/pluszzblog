@@ -112,7 +112,7 @@ div.container{
 }
 
 div.post-title-block{
-	margin:10px
+	margin: 1em
 }
 
 div.section-timestamp{
@@ -130,16 +130,14 @@ div.section{
 	padding-left: 15px;
 	width: 70%;
 	background: #F5CB5C;
-	color: #F4F3EE;
-	padding: 1px;
+	padding: 3px;
 	border-radius:5px 0px 0px 5px;
 }
 
 div.timestamp{
-	background:#463F3A;
-	padding: 1px;
+	background:#242423;
+	padding: 3px;
 	color: #F5CB5C;
-	padding: 1px;
 	border-radius:0px 5px 5px 0px;
 	width: 30%
 }	
@@ -223,7 +221,7 @@ img.featurette-image{
     background: #242423;
 	display: flex;
 	flex-direction: column;
-	width: 8em;
+	width: 10em;
 }
 
 .selected-post:hover{
@@ -246,7 +244,7 @@ img.featurette-image{
 
 .selected-post-section{
 	font-size:8px;
-	color:#F5CB5C;
+	color:#242423;
 	margin-right: auto;
 	margin-left: auto; 
 }
@@ -295,9 +293,15 @@ img.featurette-image{
 
 }
 
+.index-post-display{
+	display: flex;
+	flex-direction: column;
+}
+
 .index-post-list{
 	display: flex; 
 	flex-direction:row;
+	flex-wrap: wrap;
 }
 
 
@@ -563,14 +567,38 @@ a.previous-disabled{
 	padding: 15px;
 }
 
-.user_menu{
-	display: flex;
-	flex-direction: row;
-	padding: 2em;
-	margin: 2em;
-}
 
 .post-inf{
 
 	padding-left: 4em;
+}
+
+.micro-icon{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 3px solid #F5CB5C;
+	margin-left: 1em;
+}
+
+
+.information-posts{
+	display: flex;
+	flex-direction: row;
+	align-items: : right;
+	margin-top: -1em;
+	margin-right: -2em;
+
+}
+
+.information-posts-text{
+	color: #F5CB5C;
+	text-decoration: underline bold;
+	text-align: center;
+	padding-top: 2px;
+}
+
+.information-posts>div{
+	display: flex;
+	flex-direction: row;
 }
