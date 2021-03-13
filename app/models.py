@@ -133,7 +133,7 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
                  backref=db.backref('read_later', lazy='dynamic'), lazy='dynamic')
     last_seen = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     message_sent = db.relationship('PrivateMessages', foreign_keys='PrivateMessages.sender_id', backref='sender', lazy='dynamic')
-    messge_received = db.relationship('PrivateMessages', foreign_keys='PrivateMessages.recipient_id', backref='recipient', lazy='dynamic')
+    message_received = db.relationship('PrivateMessages', foreign_keys='PrivateMessages.recipient_id', backref='recipient', lazy='dynamic')
 
     registration_time = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     last_message_red_time = db.Column(db.DateTime)

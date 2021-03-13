@@ -6,10 +6,10 @@ from flask_login import current_user, login_required
 from flask_babel import _, get_locale
 from guess_language import guess_language
 from app import db
-from app.models import User, Post, Comments, likes_table_comments
+from app.models import User, Post, Comments, likes_table_comments, PrivateMessages
 from app.translate import translate
 from app.main import bp
-from app.main.forms import PostForm, CommentsForm, EmptyForm
+from app.main.forms import PostForm, CommentsForm, EmptyForm, MessageForm
 
 @bp.route('/', methods=['GET', 'POST'])
 @bp.route('/index', methods=['GET', 'POST'])
@@ -29,7 +29,7 @@ def blog():
                     section = form.post_section.data)
         db.session.add(post)
         db.session.commit()
-        return redirect(url_for('main.index'))
+        return redirect(url_for('main.blog'))
     selected_posts = db.session.query(Post).filter(Post.selected_posts==1).all()
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.timestamp.desc()).paginate(
@@ -142,7 +142,8 @@ def user(username, category="_favorite_posts"):
         liked_posts = user.to_read_later().paginate(page, current_app.config['POSTS_PER_PAGE'], False)
         next_url = url_for('main.blog', page=liked_posts.next_num) if liked_posts.has_next else None
         prev_url = url_for('main.blog', page=liked_posts.prev_num) if liked_posts.has_prev else None
-    return render_template('user_page.html', page_to_vievs=page_to_vievs, Comments=Comments, user=user, form=form ,liked_posts=liked_posts, prev_url=prev_url, next_url=next_url)
+    return render_template('user_page.html', page_to_vievs=page_to_vievs, Comments=Comments, user=user,
+                           form=form ,liked_posts=liked_posts, prev_url=prev_url, next_url=next_url)
 
 
 
@@ -151,4 +152,31 @@ def user(username, category="_favorite_posts"):
 @bp.route("/messages")
 @login_required
 def messages():
-    pass
+    user = current_user
+    current_user.last_message_read_time = datetime.utcnow()
+    db.session.commit()
+    page = request.args.get('page', 1, type=int)
+    messages = current_user.message_received.order_by(
+        PrivateMessages.timestamp.desc()).paginate(page, current_app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('main.messages', page=messages.next_num) if messages.has_next else None
+    prev_url = url_for('main.messages', page=messages.prev_num) if messages.has_prev else None
+    return render_template('user_page.html',page_to_vievs='_messages.html', messages=messages.items, 
+                            user=user, next_url=next_url, prev_url=prev_url, User=User)
+
+
+
+
+@bp.route('/send_message/<recipient>', methods=['GET', 'POST'])
+@login_required
+def send_message(recipient):
+    user = User.query.filter_by(username=recipient).first_or_404()
+    form = MessageForm()
+    if form.validate_on_submit():
+        msg = PrivateMessages(sender=current_user, recipient=user,
+                      body=form.message.data)
+        db.session.add(msg)
+        db.session.commit()
+        flash(_('Your message has been sent.'))
+        return redirect(url_for('main.user', username=recipient))
+    return render_template('send_message.html', title=_('Send Message'),
+                           form=form, recipient=recipient)

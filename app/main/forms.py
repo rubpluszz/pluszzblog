@@ -50,9 +50,8 @@ class SearchForm(FlaskForm):
             kwargs['csrf_enabled'] = False
         super(SearchForm, self).__init__(*args, **kwargs)
 
-class LikeForm(FlaskForm):
-    like = SubmitField('like')
 
-
-class DisLikeForm(FlaskForm):
-    dislike = SubmitField('dislike')
+class MessageForm(FlaskForm):
+    title= StringField(_l('Message Title'), validators= [DataRequired(),Length(min=0, max=140)])
+    message = TextAreaField(_l('Message'), validators = [DataRequired(), Length(min=0, max=340)])
+    submit = SubmitField(_l('Submit'))
