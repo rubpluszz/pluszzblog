@@ -104,9 +104,9 @@ def dislike_comment(comment_id, post_id):
 
 @bp.route("/about")
 def about():
-    '''About"  it is standart post with atribute "hidden==True"'''
     selected_posts = db.session.query(Post).filter(Post.selected_posts==True).all()
-    return render_template('about.html', selected_posts=selected_posts)
+    post_id = Post.query.filter_by(title='About').first_or_404().id
+    return redirect(url_for('main.post', post_id=post_id)) 
 
 @bp.route("/projects")
 def projects():
@@ -116,7 +116,7 @@ def projects():
 @bp.route("/section")
 def section():
     selected_posts = db.session.query(Post).filter(Post.selected_posts==True).all()
-    return redirect(url_for('main.post', post_id=post_id)) 
+    return render_template('section.html', selected_posts=selected_posts)
 
 
 @bp.route("/cooperation", methods=['GET','POST'])
