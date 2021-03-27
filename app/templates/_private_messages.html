@@ -1,0 +1,44 @@
+                      <h2> {{ message.title }} </h2>
+                      <div class="container comment-table">
+                        <div class="post-column comment-avatar">
+                          {% set user = User.query.filter_by(id=message.sender_id).first() %}
+                          <a href={{ url_for("main.user", username=user.username) }}>
+                            <img class="avatar-in-comments" align="right" data-src="holder.js/500x500/auto" alt="90x90" src="{{ User.query.filter_by(id=message.sender_id).first().avatar(120) }}" data-holder-rendered="true" title="{{ User.query.filter_by(id=message.sender_id).first().status }}">
+                            <h4 class="featurette-heading">
+                                <b title="{{ User.query.filter_by(id=message.sender_id).first().status }}">{{ user.username }}.</b>
+                            </h4>
+                                <br>
+                                <div class="usr-information-in-comments" id="usr-inf-1" title="{{ User.query.filter_by(id=message.sender_id).first().status }}">
+                                    <b>Registration:</b><br>
+                                    {{ moment(user.registration_time).format('LL') }}<br>
+                                    {% if user.last_seen %}
+                                      <b>Last seen:</b><br>
+                                      <div>{{ moment(user.last_seen).fromNow() }}</div>
+                                    {% endif %}
+                                </div>
+                          </a>
+                        </div>
+                        <div class="comment-body">
+                            <div class="comment-is-made-at" id="comment-time">
+                              
+                              <div class="first-column">message is made at:</div>
+                              <div class="last-column">
+                                {{ moment(user.registration_time).format('LLL') }}
+                              </div>
+                                
+                            </div>
+                            <div class="com-message">
+                             {{ render_html(message.body) | safe }}
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                      <div  class="like-form">
+                        <a class="user-page-button" title="{{ _('Press to answer this message') }}" href="{{ url_for('main.send_message',recipient=user.username) }}">{{ _('Answer') }}</a>
+                      </div>
+                    </div>
+                    <br>
+                    <br>
+
+               

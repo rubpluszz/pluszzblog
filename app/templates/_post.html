@@ -1,0 +1,58 @@
+                    <div class="post-title-block" id="post-{{ post.id }}">               
+                      <div class="section-timestamp" id="section-timestamp-{{ post.id }}">
+                        <div class="section" id="section-{{ post.id }}">
+                            {{ post.section }}
+                        </div>
+                          <div class="timestamp" id="timestamp-{{ post.id }}" align="right">
+                            {{ moment(post.timestamp).fromNow() }}
+                          </div>
+                        </div>
+                      <div class="image-discription" id="img-description-{{ post.id }}">
+                 
+                    <div class="post_title-post_discription" id="title-discription-{{ post.id }}" align="left">
+
+                      <h4 class="featurette-heading" id="featurette-heading-{{ post.id }}" align="left">            
+                        <a href="{{ url_for('main.post', post_id=post.id) }}">{{ post.title }}.</a>
+                      </h4>
+                      <div class="title-discription">
+                         <a href="{{ url_for('main.post', post_id=post.id) }}">{{ post.description }}</a>
+                      </div>
+                    </div>
+        
+                    <div class="post-title-image" id="title_image-{{ post.id }}"
+                            align="right">
+                       <a href="{{ url_for('main.post', post_id=post.id) }}"><img class="featurette-image img-responsive" align="right" alt="500x500" src="{{ post.title_image }}" data-holder-rendered="true"></a>
+                    </div>
+                  
+                </div>
+                  <div class="information-posts">
+                    <div title="{{ _('likes') }}">
+                      <img src="{{ url_for('static', filename='like.png') }}" class="micro-icon">
+                      <div class="information-posts-text" > 
+                        <br>{{ post.coin_likes() }}
+                      </div>
+                    </div>
+                    <div title="{{ _('dislikes') }}">
+                      <img src="{{ url_for('static', filename='dislike.png') }}" class="micro-icon"> 
+                      <div class="information-posts-text">
+                        <br>{{ post.coin_dislikes() }}
+                      </div>
+                    </div>           
+                    <div title="{{ _('vievs') }}">
+                      <img src="{{ url_for('static', filename='eye.jpg') }}" class="micro-icon"> 
+                      <div class="information-posts-text">
+                        <br>{{ post.vievs }}
+                      </div>
+                    </div>
+                    <div title="{{ _('komments') }}">
+                      <img src="{{ url_for('static', filename='pero.png') }}" class="micro-icon"> 
+                      <div class="information-posts-text">
+                        <br>{{ post.commented() }}
+                      </div>
+                 </div>
+                <br>
+                </div>
+                </div>
+
+  
+                 

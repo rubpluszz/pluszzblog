@@ -1,0 +1,49 @@
+<div class="user-content" id="edit-user-data-forms">
+   <form action="" method="post" id="edit-username-form">
+        {{ edit_username_form.hidden_tag() }}
+        {{ edit_username_form.username.label }}<br>
+        {{ edit_username_form.username(size=45) }}
+        {{ edit_username_form.submit() }}
+        {% for error in edit_username_form.username.errors %}
+           <span class="discription-this-page-inborder">[{{ error }}]</span>
+        {% endfor %}
+   </form>
+   <br>
+   <hr>
+   <br>
+   <form action="" method="post" id="edit-password-form">
+        {{ edit_password_form.hidden_tag() }}
+        {{ edit_password_form.password.label }}<br>
+        {{ edit_password_form.password(size=45) }}<br>
+        {{ edit_password_form.password2.label }}<br>
+        {{ edit_password_form.password2(size=45) }}
+        {{ edit_password_form.submit() }}
+        {% for error in edit_password_form.password.errors  %}
+           <span class="discription-this-page-inborder">[{{ error }}]</span>
+        {% endfor %}
+   </form>
+   <br>
+   <hr>
+   <br>
+   <form action="" method="post" id="edit-username-form">
+        {{ edit_status_form.hidden_tag() }}
+        {{ edit_status_form.status.label }}<br>
+        {{ edit_status_form.status(size=45) }}
+        {{ edit_status_form.submit() }}
+        {% for error in edit_status_form.status.errors %}
+           <span class="discription-this-page-inborder">[{{ error }}]</span>
+        {% endfor %}
+   </form>
+   <br>
+   <hr>
+   <br>
+        This blog does not currently support its own avatars. But the program uses the Gravatar service to provide avatars to all users. If you want to personalize your avatar, go to url and upload the image.
+        <br>
+        <br>
+        <a class="user-page-button" href="https://www.gravatar.com" target="_blank">{{ _('Edit Your Avatar') }}</a>
+        <br>
+   <br>
+   <hr>
+   <br>
+
+</div>

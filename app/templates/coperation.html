@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+	<h1>{{ _("Coperation") }}</h1>
+	<br>
+	<br>
+	<div class="user_page_in_user_page">
+		<div class="post-column">
+	    <br>
+	    <br>
+	    <img class="image_10em" src="https://drive.google.com/uc?export=view&id=11O8blGUkOIsFVNiSLPED-7UqqwEvi3Hj">
+	    <br>
+	    <br>
+	    	<div>
+	    		{{ _('Hi my nickname is Pluszz. I am an amateur engineer from Ukraine. I like IT, but I don\'t do it professionally. I am currently interested in web development on python 3, so I made this blog engine short written in a') }} 
+	    		<a class="a-yelow" title="Home page - 'flask'" href="https://flask.palletsprojects.com/en/1.1.x/">flask</a>.
+	    		{{ _('Since I studied the flask on') }} 
+	    		<a class="a-yelow" href="https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world">{{ _('Miguel Greenberg\'s "The Flask Mega-Tutorial"') }}</a>, 
+	    		{{ _('there are significant patches of his code in my appendix. Because the author is as poor as a church mouse, this blog is hosted for free on the service') }}
+	    		<a class="a-yelow" title="Heroku" href="https://dashboard.heroku.com">"Heroku"</a>.
+	    		 The source code of this mutant can be found 
+	    		 <a class="a-yelow" title="GitHub" href="https://github.com/rubpluszz/pluszzblog">here</a>. 
+	    		 {{ _('I will be grateful for suggestions in the comments or private messages. When criticizing, please remember that I am not a magician, I\'m just learning.') }}
+	    		<br>
+  
+				{{ _('This page contains information about cooperation. If you have interesting projects and you lack hands, please contact me. I always agree to help. If you have uninteresting projects with the opportunity to earn well, please contact me.') }}
+				<br>
+				<br>
+				<b>{{ _('What can I do:') }}</b>
+				<ul>
+
+					<li>Python 3</li>
+					<li>Flask</li>
+					<li>pyTelegramBotAPI</li>
+					<li>Selenium WebDriver</li>
+					<li>SQLAlchemy</li>
+					<li>SQLite</li>
+					<li>GIT</li>
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>Bootstrap</li>
+					<li>Linux</li>
+					<li>Windows</li>
+					<li>SQL</li>
+					<li>C ++</li>
+				</ul>
+				{{ _('For me, you can contact us by mail or here via the feedback form indicating how you can be contacted.') }}'
+				<br>
+				<br>
+				{{ _('My telegram:') }}<a class="a-yelow" title="My Telegram" href="tg://resolve?domain=<@pluszzer>">@pluszzer</a>
+				<br>
+				{{ _('My email') }}:<a class="a-yelow" title="My email" href="mailto:pluszz@gmail.com">pluszz@gmail.com</a>
+				<br>
+				<br>
+				{% if user.username!="pluszz" %}
+				<b>{{ ('Feedback Form:') }}</b>
+				  <form action="" method="post" class="comments-form" id="comments-form" novalidate>
+    				{{ form.hidden_tag() }}
+            		{{ form.title.label }}
+            		{{ form.title(size=100) }}
+            		{{ form.message.label }}
+            		{{ form.message(size=100, rows=8, class="editable_pole") }}
+            		{% for error in form.message.errors %}
+						<span class="discription-this-page-inborder">[{{ error }}]</span>
+					{% endfor %}
+            		<div class="button">
+              			{{ form.submit() }}
+            		</div>
+        		  </form>
+        		{% endif %}
+			</div>
+	    </div>
+    </div>
+{% endblock%}

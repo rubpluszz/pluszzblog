@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1><u>{{ _('Send Message to %(recipient)s:', recipient=recipient) }}</u></h1>
+    <div class="post-column comments">
+    	<form action="" method="post" class="comments-form" id="comments-form" novalidate>
+    		{{ form.hidden_tag() }}
+            {{ form.title.label }}
+            {{ form.title(size=100) }}
+            {{ form.message.label }}
+            {{ form.message(size=100, rows=8, class="editable_pole") }}
+            {% for error in form.message.errors %}
+			<span class="discription-this-page-inborder">[{{ error }}]</span>
+			{% endfor %}
+            <div class="button">
+              {{ form.submit() }}
+            </div>
+        </form>
+    </div>
+{% endblock %}
