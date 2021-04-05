@@ -13,7 +13,7 @@
       {% endif %}
     </title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=3.527) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=3.595) }}">
 
   </head>
 
@@ -27,32 +27,43 @@
 
       <nav class="navbar" id="navbar">
         <div class="navbar-collapse">
-          <div class="navbar-li navbar-brand-img">
+          <div class="navbar-collapse">
+          <div class="navbar-brand-img">
               <a class="navbar-brand" href="{{ url_for('main.blog') }}">
                 <img id="logo-image" src="{{ url_for('static', filename='logo.png') }}">
               </a>
           </div>
-          <div class="navbar-li blog-link navbar-menu" id="blog-link">
+          <div class="navbar-li blog-link navbar-menu user-page-button" id="blog-link">
               <a href="{{ url_for('main.section') }}">
+                <img class="icon-image" src="{{ url_for('static', filename='sections.png') }}">
                  {{ _('Sections')}}
               </a>
           </div>
-          <div class="navbar-li my_projects navbar-menu" id="my_projects">
+          <div class="navbar-li my_projects navbar-menu user-page-button" id="my_projects">
               <a href="{{ url_for('main.projects') }}">
-                 {{ _('My Projects') }}
+                <img class="icon-image" src="{{ url_for('static', filename='my_projects.png') }}">
+                 {{ _('MyProjects') }}
               </a>
           </div>
           <div class="navbar-li about navbar-menu" id="about">
               <a href="{{ url_for('main.about') }}">
+                <img class="icon-image" src="{{ url_for('static', filename='about.png') }}">
                  {{ _('About') }}
               </a>
           </div>
           <div class="navbar-li cooperation navbar-menu" id="cooperation">
               <a href="{{ url_for('main.cooperation') }}">
+                <img class="icon-image" src="{{ url_for('static', filename='cooperation.png') }}">
                  {{ _('Cooperation') }}
               </a>
           </div>
-          <div class="navbar-li search-field " id="search">
+          <div class="navbar-li navbar-menu hidden-for-pc" id="search-field">
+              <a href="{{ url_for('main.search_link') }}">
+                <img class="icon-image" src="{{ url_for('static', filename='search.png') }}">
+                 {{ _('Search') }}
+              </a>
+          </div>
+          <div class="navbar-li search-field hidden-for-phone" id="search">
             {% if g.search_form %}
             <form class="navbar-form navbar-left" method="get" action="{{ url_for('main.search') }}">
                 <div class="form-group">
@@ -61,33 +72,37 @@
             </form>
             {% endif %}
           </div>
-          {% if not current_user.is_anonymous %}
-          <div class="navbar-li cooperation navbar-menu" id="cooperation">
-              <a href="{{ url_for('main.messages') }}">
-                 {{ _('Messages') }}
-                 {% set new_messages = current_user.new_messages() %}
-                <span id="message_count" class="badge"
-                      style="visibility: {% if new_messages %}visible {% else %}hidden {% endif %};">
-                      {{ new_messages }}
-                </span>
-
-              </a>
-          </div>
-          <div class="navbar-li current_user navbar-menu" id="current_user">
+        </div>
+          <div class="navbar-collapse">
+            {% if current_user.is_authenticated %}
+              <div class="navbar-li cooperation navbar-menu" id="cooperation">
+                <a href="{{ url_for('main.messages_inbox') }}">
+                  <img class="icon-image" src="{{ url_for('static', filename='message.png') }}">
+                  {{ _('Messages') }}
+                  {% if current_user.new_messages() %}
+                     {{ current_user.new_messages() }}
+                  {% endif %}
+                </a>
+              </div>
+              <div class="navbar-li current_user navbar-menu" id="current_user">
                 <a href="{{ url_for('main.user', username=current_user.username) }}">
+                  <img class="icon-image" src="{{ url_for('static', filename='user.png') }}">
                    {{ current_user.username }}
                 </a>
-                        </div>
-          {% endif %}
+              </div>
+            {% endif %}
 
-          <div class="navbar-li  login-logout" id="login-logout" align="right">
+            <div class="navbar-li  login-logout" id="login-logout" align="right">
                 {% if current_user.is_anonymous %}
                     <a href="{{ url_for('auth.login') }}">
+                      <img class="icon-image" src="{{ url_for('static', filename='user.png') }}">
                     {{ _('Login') }}</a>
                 {% else %}
                      <a href="{{ url_for('auth.logout') }}">
+                    <img class="icon-image" src="{{ url_for('static', filename='exit.png') }}">
                     {{ _('Logout') }}</a>
                 {% endif %}
+            </div>
           </div>
         </div>
       </nav>

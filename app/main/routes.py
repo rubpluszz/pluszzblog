@@ -9,7 +9,7 @@ from app.models import User, Post, Comments, likes_table_comments, PrivateMessag
 from app.translate import translate
 from app.main import bp
 from app.main.forms import PostForm, CommentsForm, EmptyForm, MessageForm, SearchForm, ChangeUserNameForm, ChangePasswordForm, ChangeStatusForm
-from bbcode import render_html
+from bbcode import render_html 
 
 
 @bp.route('/', methods=['GET', 'POST'])
@@ -104,9 +104,11 @@ def dislike_comment(comment_id, post_id):
 
 @bp.route("/about")
 def about():
-    '''About"  it is standart post with atribute "hidden==True"'''
     selected_posts = db.session.query(Post).filter(Post.selected_posts==True).all()
-    return render_template('about.html', selected_posts=selected_posts)
+    post_id = Post.query.filter_by(title='About').first_or_404().id
+    return redirect(url_for('main.post', post_id=post_id)) 
+
+
 
 @bp.route("/projects")
 def projects():
@@ -116,7 +118,7 @@ def projects():
 @bp.route("/section")
 def section():
     selected_posts = db.session.query(Post).filter(Post.selected_posts==True).all()
-    return redirect(url_for('main.post', post_id=post_id)) 
+    return render_template('section.html', selected_posts=selected_posts)
 
 
 @bp.route("/cooperation", methods=['GET','POST'])
@@ -160,19 +162,34 @@ def user(username, category="_favorite_posts"):
 
 
 
-@bp.route("/messages")
+@bp.route("/messages_inbox")
 @login_required
-def messages():
+def messages_inbox():
     user = current_user
     current_user.last_message_read_time = datetime.utcnow()
     db.session.commit()
     page = request.args.get('page', 1, type=int)
     messages = current_user.message_received.order_by(
         PrivateMessages.timestamp.desc()).paginate(page, current_app.config['POSTS_PER_PAGE'], False)
-    next_url = url_for('main.messages', page=messages.next_num) if messages.has_next else None
-    prev_url = url_for('main.messages', page=messages.prev_num) if messages.has_prev else None
+    next_url = url_for('main.messages_inbox', page=messages.next_num) if messages.has_next else None
+    prev_url = url_for('main.messages_inbox', page=messages.prev_num) if messages.has_prev else None
     return render_template('user_page.html',render_html=render_html, page_to_vievs='_messages.html', messages=messages.items, 
-                            user=user, next_url=next_url, prev_url=prev_url, User=User)
+                            user=user, next_url=next_url, prev_url=prev_url, User=User, title=_('Inbox Messages'))
+
+
+@bp.route("/messages_outbox")
+@login_required
+def messages_outbox():
+    user = current_user
+    current_user.last_message_read_time = datetime.utcnow()
+    db.session.commit()
+    page = request.args.get('page', 1, type=int)
+    messages = current_user.message_sent.order_by(
+        PrivateMessages.timestamp.desc()).paginate(page, current_app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('main.messages_outbox', page=messages.next_num) if messages.has_next else None
+    prev_url = url_for('main.messages_outbox', page=messages.prev_num) if messages.has_prev else None
+    return render_template('user_page.html',render_html=render_html, page_to_vievs='_messages.html', messages=messages.items, 
+                            user=user, next_url=next_url, prev_url=prev_url, User=User, title=_('Outbox Messages'))
 
 
 
@@ -192,6 +209,28 @@ def send_message(recipient):
     return render_template('send_message.html', title=_('Send Message'),
                            form=form, recipient=recipient)
 
+@bp.route('/dialog_by/<int:user_id>')#inwork
+@login_required
+def dialog_by(user_id):
+    current_user.last_message_read_time = datetime.utcnow()
+    db.session.commit()
+    page = request.args.get('page', 1, type=int)
+    user = User.query.filter_by(id=user_id).first_or_404()
+    form = MessageForm()
+    if form.validate_on_submit():
+        msg = PrivateMessages(sender=current_user, recipient=user,
+                      body=form.message.data)
+        db.session.add(msg)
+        db.session.commit()
+        flash(_('Your message has been sent.'))
+        return redirect(url_for('main.dialog_by', user_id=user_id))
+    page = request.args.get('page', 1, type=int)
+    messages = PrivateMessages.select_messages_to_dialog(user).paginate(page, current_app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('main.messages_outbox', page=messages.next_num) if messages.has_next else None
+    prev_url = url_for('main.messages_outbox', page=messages.prev_num) if messages.has_prev else None
+    return render_template('dialog.html', title=_(f'Dialog by {user.username}:'),
+                           form=form,render_html=render_html, User=User, user=user, messages=messages.items, next_url=next_url, prev_url=prev_url)
+
 
 
 @bp.before_app_request
@@ -205,10 +244,10 @@ def before_request():
 
 
 @bp.route('/search')
-@login_required
 def search():
+
     if not g.search_form.validate():
-        return redirect(url_for('main.explore'))
+        return redirect(url_for('main.blog'))
     page = request.args.get('page', 1, type=int)
     posts, total = Post.search(g.search_form.q.data, page,
                                current_app.config['POSTS_PER_PAGE'])
@@ -218,6 +257,11 @@ def search():
         if page > 1 else None
     return render_template('search.html', title=_('Search'), posts=posts,
                            next_url=next_url, prev_url=prev_url)
+
+
+@bp.route('/search_link')
+def search_link():
+    return render_template('search.html', title=_('Search'))
 
 
 @bp.route('/delete_post/<post_id>')
@@ -328,3 +372,4 @@ def edit_profile():
         return redirect(url_for('main.edit_profile'))
     return render_template('user_page.html', page_to_vievs='_edit_profile.html', user=user, title=_('Edit Profile'), edit_username_form=edit_username_form, 
                            edit_password_form=edit_password_form, edit_status_form=edit_status_form)
+

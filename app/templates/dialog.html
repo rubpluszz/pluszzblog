@@ -1,4 +1,27 @@
-                      <h2> {{ message.title }} </h2>
+{% extends "base.html" %}
+
+{% block app_content %}
+	 <div class="user_table_in_user_page table table-hover">
+        <img class="avatar-in-user-page" src="{{ user.avatar(256) }}">
+        <div>
+          <div class="user-information-in-usertable">
+            <h1>{{ user.username }}</h1>
+            {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+            <p>{{ _('Registration') }}: {{ moment(user.registration_time).format('LLL') }}</p>
+            {% if user.last_seen %}
+              <p>{{ _('Last seen on') }}: {{ moment(user.last_seen).format('LLL') }}</p>
+            {% endif %}
+            {% if user.status %}
+ 			  {{ user.username+" wants to say: " }} <b>{{ user.status }}</b>
+ 			{% endif %}
+ 			<p>{{ _('Reputation') }}:{{ user.reputation() }}</p>
+ 		  </div>
+        </div>
+    </div>
+    <div class="user_page_in_user_page">
+    <h1>{{ title }}</h1>
+    {% for message in messages %}
+                              <h2> {{ message.title }} </h2>
                       <div class="container comment-table">
                         <div class="post-column comment-avatar">
                           {% set user = User.query.filter_by(id=message.sender_id).first() %}
@@ -32,16 +55,21 @@
                             </div>
                         </div>
                     </div>
-                    <br>
-                    {% if user!=current_user  %}
-                    <div class="container">
-                      <div  class="like-form">
-                        <a class="user-page-button" title="{{ _('Press to answer this message') }}" href="{{ url_for('main.send_message',recipient=user.username) }}">{{ _('Answer') }}</a>
-                      </div>
-                    </div>
-                    {% endif %}
-                    </div>
-                    <br>
-                    <br>
 
-               
+    {% endfor %}
+    <nav aria-label="...">
+        <ul class="pager">
+            <li class="previous{% if not prev_url %} disabled{% endif %}">
+                <a href="{{ prev_url or '#' }}">
+                    <span aria-hidden="true">&larr;</span> {{ _('Newer messages') }}
+                </a>
+            </li>
+            <li class="next{% if not next_url %} disabled{% endif %}">
+                <a href="{{ next_url or '#' }}">
+                    {{ _('Older messages') }} <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    </div>
+{% endblock %}

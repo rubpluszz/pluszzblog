@@ -4,14 +4,17 @@ import json
 import os
 from time import time
 from flask import current_app, url_for
-from flask_login import UserMixin
+from flask_login import UserMixin, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
 from app import db, login
 from app.search import add_to_index, remove_from_index, query_index
+from sqlalchemy import or_, and_
 
 
 class SearchableMixin(object):
+
+
     @classmethod
     def search(cls, expression, page, per_page):
         ids, total = query_index(cls.__tablename__, expression, page, per_page)
@@ -23,6 +26,7 @@ class SearchableMixin(object):
         return cls.query.filter(cls.id.in_(ids)).order_by(
             db.case(when, value=cls.id)), total
 
+
     @classmethod
     def before_commit(cls, session):
         session._changes = {
@@ -30,6 +34,7 @@ class SearchableMixin(object):
             'update': list(session.dirty),
             'delete': list(session.deleted)
         }
+
 
     @classmethod
     def after_commit(cls, session):
@@ -44,6 +49,7 @@ class SearchableMixin(object):
                 remove_from_index(obj.__tablename__, obj)
         session._changes = None
 
+
     @classmethod
     def reindex(cls):
         for obj in cls.query:
@@ -56,28 +62,24 @@ db.event.listen(db.session, 'after_commit', SearchableMixin.after_commit)
 
 class PaginatedAPIMixin(object):
     @staticmethod
+
     def to_collection_dict(query, page, per_page, endpoint, **kwargs):
         resources = query.paginate(page, per_page, False)
         data = {
-            'items': [item.to_dict() for item in resources.items],
-            '_meta': {
-                'page': page,
-                'per_page': per_page,
-                'total_pages': resources.pages,
-                'total_items': resources.total
-            },
-            '_links': {
-                'self': url_for(endpoint, page=page, per_page=per_page,
-                                **kwargs),
-                'next': url_for(endpoint, page=page + 1, per_page=per_page,
-                                **kwargs) if resources.has_next else None,
-                'prev': url_for(endpoint, page=page - 1, per_page=per_page,
-                                **kwargs) if resources.has_prev else None
-            }
-        }
+                'items': [item.to_dict() for item in resources.items],
+                '_meta':{
+                         'page': page,
+                         'per_page': per_page,
+                         'total_pages': resources.pages,
+                         'total_items': resources.total
+                        },
+                '_links':{
+                          'self': url_for(endpoint, page=page, per_page=per_page, **kwargs),
+                          'next': url_for(endpoint, page=page + 1, per_page=per_page, **kwargs) if resources.has_next else None,
+                          'prev': url_for(endpoint, page=page - 1, per_page=per_page, **kwargs) if resources.has_prev else None
+                         }
+                }
         return data
-
-
 
 
 likes_table_posts = db.Table('likes_table_posts', db.Model.metadata,
@@ -91,6 +93,7 @@ dislikes_table_posts = db.Table('dislikes_table_posts',
                         db.Column('id_post', db.Integer, db.ForeignKey('post.id'))
                         )
 
+
 likes_table_comments = db.Table('likes_table_comments', 
                         db.Column('id_user', db.Integer, db.ForeignKey('user.id')),
                         db.Column('id_comments', db.Integer, db.ForeignKey('comments.id'))
@@ -101,6 +104,7 @@ dislikes_table_comments = db.Table('dislikes_table_comments',
                         db.Column('id_user', db.Integer, db.ForeignKey('user.id')),
                         db.Column('id_comments', db.Integer, db.ForeignKey('comments.id'))
                         )
+
 
 read_later_table_posts = db.Table('read_later_table_posts', 
                         db.Column('id_user', db.Integer, db.ForeignKey('user.id')),
@@ -253,6 +257,7 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
 
 
 class Post(SearchableMixin, db.Model):
+
     __searchable__ = ['body','title', 'description', 'section']
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120), index=True)
@@ -293,6 +298,7 @@ class Post(SearchableMixin, db.Model):
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+        
 
 class Comments(db.Model):
 
@@ -304,14 +310,18 @@ class Comments(db.Model):
     likes = db.Column(db.Integer, default=0)
     dislikes = db.Column(db.Integer, default=0)
 
+
     def coin_likes(self,):
         return db.session.query(likes_table_comments).filter(likes_table_comments.c.id_comments == self.id).count() 
+
 
     def coin_dislikes(self,):
         return db.session.query(dislikes_table_comments).filter(dislikes_table_comments.c.id_comments == self.id).count() 
 
+
     def __repr__(self):
         return '<Comments {}>'.format(self.body)
+
 
 class PrivateMessages(db.Model):
 
@@ -321,6 +331,11 @@ class PrivateMessages(db.Model):
     sender_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     recipient_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+
+    def select_messages_to_dialog(user):
+        """This method return dialog current_user from selected user"""
+        return db.session.query(PrivateMessages).filter(or_(and_(PrivateMessages.sender_id == current_user.id, PrivateMessages.recipient_id==user.id), and_(PrivateMessages.recipient_id == current_user.id, PrivateMessages.sender_id==user.id))).order_by(PrivateMessages.timestamp)
+
 
     def __repr__(self):
         return 'PrivateMessages {}'.format(self.body)

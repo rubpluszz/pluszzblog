@@ -30,7 +30,7 @@
             <a class="user-page-button" href="{{ url_for('main.user', username=user.username, category='_favorite_posts') }}">{{ _('Favorite posts') }}</a>
             <a class="user-page-button" href="{{ url_for('main.user', username=user.username, category='_read_later') }}">{{ _('Read later') }}</a>
             <a class="user-page-button" href="{{ url_for('main.user', username=user.username, category='_recomendation') }}">{{ _('Recomendation') }}</a>
-            <a class="user-page-button" href="{{ url_for('main.messages') }}">{{ _('messages') }}</a>
+            <a class="user-page-button" href="{{ url_for('main.messages_inbox') }}">{{ _('messages') }}</a>
             {% if user.username=='pluszz' %}
             	<a class="user-page-button" href="{{ url_for('main.blog') }}">{{ _('users') }}</a>
             {% endif %}

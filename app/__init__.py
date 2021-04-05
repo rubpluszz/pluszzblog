@@ -12,7 +12,6 @@ from flask_babel import Babel, lazy_gettext as _l
 from elasticsearch import Elasticsearch
 from config import Config
 
-
 db = SQLAlchemy()
 migrate = Migrate()
 login = LoginManager()
@@ -25,6 +24,7 @@ babel = Babel()
 
 
 def create_app(config_class=Config):
+
     app = Flask(__name__)
     app.config.from_object(config_class)
     db.init_app(app)
@@ -81,7 +81,10 @@ def create_app(config_class=Config):
     
     return app
 
+
 @babel.localeselector
 def get_locale():
     return request.accept_languages.best_match(current_app.config['LANGUAGES'])
+
+    
 from app import models

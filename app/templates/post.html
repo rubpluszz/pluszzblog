@@ -3,10 +3,10 @@
 {% block app_content %}
 
 	<div class="title-end-discription-block-h1">
-      <h1>{{ title }}</h1>
-      <div class="discription-this-page-inborder discription-page post-text">
-        {{ post.description }}
-      </div>
+        <h1>{{ title }}</h1>
+        <div class="discription-this-page-inborder discription-page post-text">
+            {{ post.description }}
+        </div>
     </div>
     <div class="information-section">
 	  <div class="post-body"  id="post_body">
@@ -61,6 +61,14 @@
 				{{ form.hidden_tag() }}
 				{{ form.comment.label }}
 				{{ form.comment(rows=8, class="editable_pole") }}
+				<div class="subtitle-with-txt-forme">
+            		<i>
+            			{{ _('* This form supports') }}
+            		 	<a class="a-yelow" href=''>
+           			 	    {{ _('bbcode') }}
+        			 	</a>
+           			</i>
+           		</div>
 				{% for error in form.comment.errors %}
 					<span class="discription-this-page-inborder">[{{ error }}]</span>
 				{% endfor %}
