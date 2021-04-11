@@ -1,0 +1,586 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-04-10 18:56+0200\n"
+"PO-Revision-Date: 2021-04-10 18:56+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: app/__init__.py:19
+msgid "Please log in to access this page."
+msgstr "Пожалуйста, авторизуйтесь, чтобы получить доступ к этой странице."
+
+#: app/translate.py:12
+msgid "Error: the translation service failed."
+msgstr "Ошибка: Сервис перевода не отвечает."
+
+#: app/auth/email.py:8
+msgid "Pluszzblog Reset Your Password"
+msgstr "Pluszzblog. Твой пароль сброшен"
+
+#: app/auth/forms.py:9 app/auth/forms.py:16 app/main/forms.py:61
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: app/auth/forms.py:10 app/auth/forms.py:18 app/auth/forms.py:39
+#: app/main/forms.py:80
+msgid "Password"
+msgstr "Пароль"
+
+#: app/auth/forms.py:11
+msgid "Remember Me"
+msgstr "Запомнить меня"
+
+#: app/auth/forms.py:12 app/auth/routes.py:27 app/templates/auth/login.html:5
+msgid "Sign In"
+msgstr "Вход"
+
+#: app/auth/forms.py:17 app/auth/forms.py:34
+msgid "Email"
+msgstr "Емайл"
+
+#: app/auth/forms.py:19 app/auth/forms.py:41 app/main/forms.py:81
+msgid "Repeat Password"
+msgstr "Повторить пароль"
+
+#: app/auth/forms.py:20 app/auth/routes.py:48
+#: app/templates/auth/register.html:5
+msgid "Register"
+msgstr "Регистрация"
+
+#: app/auth/forms.py:25 app/main/forms.py:72
+msgid "Please use a different username."
+msgstr "Пожалуйста воспольуйтесь другим именем пользователя"
+
+#: app/auth/forms.py:30
+msgid "Please use a different email address."
+msgstr "Пожалуйста воспользуйтесь другим адресом електонной почты"
+
+#: app/auth/forms.py:35 app/auth/forms.py:43
+msgid "Request Password Reset"
+msgstr "Запрос на сброс пароля"
+
+#: app/auth/routes.py:20
+msgid "Invalid username or password"
+msgstr "Неверное имя пользователя или пароль"
+
+#: app/auth/routes.py:46
+msgid "Congratulations, you are now a registered user!"
+msgstr "Поздровляем, вы зарегистрировали новый акаунт!"
+
+#: app/auth/routes.py:62
+msgid "Check your email for the instructions to reset your password"
+msgstr "Проверьть почту. Вам одправлен мейл с инструкциями для сброса пароля"
+
+#: app/auth/routes.py:65 app/templates/auth/reset_password_request.html:5
+msgid "Reset Password"
+msgstr "Сброс Пароля"
+
+#: app/auth/routes.py:80
+msgid "Your password has been reset."
+msgstr "Твой апроль сброшен"
+
+#: app/main/forms.py:18
+msgid "Post Title"
+msgstr "Заголовок поста"
+
+#: app/main/forms.py:19
+msgid "Post Section"
+msgstr "Раздел"
+
+#: app/main/forms.py:20
+msgid "Post Description"
+msgstr "Описание поста"
+
+#: app/main/forms.py:21
+msgid "Say Something"
+msgstr "Скажи что нибудь"
+
+#: app/main/forms.py:22
+msgid "Title Image"
+msgstr "Заголовочное изображение"
+
+#: app/main/forms.py:23 app/main/forms.py:30 app/main/forms.py:52
+msgid "Submit"
+msgstr "Подтвердить"
+
+#: app/main/forms.py:29
+msgid "Write your comment"
+msgstr "Напишы коментарий"
+
+#: app/main/forms.py:35 app/main/routes.py:265 app/main/routes.py:271
+#: app/templates/base.html:63
+msgid "Search"
+msgstr "Поиск"
+
+#: app/main/forms.py:50
+msgid "Message Title"
+msgstr "Заголовок сообщения"
+
+#: app/main/forms.py:51
+msgid "Message"
+msgstr "Сообщение"
+
+#: app/main/forms.py:62 app/main/forms.py:82 app/main/forms.py:89
+msgid "Change"
+msgstr "Изменить"
+
+#: app/main/forms.py:88
+msgid "Status"
+msgstr "Статус"
+
+#: app/main/routes.py:137 app/main/routes.py:214 app/main/routes.py:232
+msgid "Your message has been sent."
+msgstr "Твоё сообщения отправлено"
+
+#: app/main/routes.py:184 app/templates/_messages.html:2
+msgid "Inbox Messages"
+msgstr "Входящия сообщения"
+
+
+#: app/main/routes.py:199 app/templates/_messages.html:2
+msgid "Outbox Messages"
+msgstr "Исходящие сообщения"
+
+#: app/main/routes.py:216
+msgid "Send Message"
+msgstr "Отправить сообщения"
+
+#: app/main/routes.py:238
+msgid "Dialog by {}:"
+msgstr "Диалог с {}:"
+
+#: app/main/routes.py:363
+msgid "Your username has changed."
+msgstr "Твой никнейм изменён."
+
+#: app/main/routes.py:371
+msgid "Your password has changed."
+msgstr "Твой паролб изменён."
+
+#: app/main/routes.py:378
+msgid "Your staus has changed."
+msgstr "Твой статус изменён"
+
+#: app/main/routes.py:380
+msgid "Edit Profile"
+msgstr "Редактировать профиль"
+
+#: app/templates/_edit_profile.html:43
+msgid "Edit Your Avatar"
+msgstr "Изменить аватар"
+
+#: app/templates/_favorite_posts.html:7 app/templates/_read_later.html:7
+#: app/templates/index.html:63
+msgid "Newer posts"
+msgstr ""
+
+#: app/templates/_favorite_posts.html:10 app/templates/_read_later.html:10
+#: app/templates/index.html:66
+msgid "Older posts"
+msgstr "Туда"
+
+#: app/templates/_messages.html:10 app/templates/dialog.html:92
+msgid "Newer messages"
+msgstr "Сюда"
+
+#: app/templates/_messages.html:15 app/templates/dialog.html:97
+msgid "Older messages"
+msgstr "Туда"
+
+#: app/templates/_post.html:29
+msgid "likes"
+msgstr "лайки"
+
+#: app/templates/_post.html:35
+msgid "dislikes"
+msgstr "дизлайки"
+
+#: app/templates/_post.html:41
+msgid "vievs"
+msgstr "просмотры"
+
+#: app/templates/_post.html:47
+msgid "komments"
+msgstr "коментарии"
+
+#: app/templates/_post_end_posta_to_user_page.html:7
+#: app/templates/_recomendation.html:9
+msgid "You"
+msgstr "Тебе"
+
+#: app/templates/_post_end_posta_to_user_page.html:7
+#: app/templates/_recomendation.html:9
+msgid "don't like"
+msgstr "не понравился"
+
+#: app/templates/_post_end_posta_to_user_page.html:7
+#: app/templates/_recomendation.html:9
+msgid "this post"
+msgstr "этот пост"
+
+#: app/templates/_post_end_posta_to_user_page.html:9
+#: app/templates/_recomendation.html:11
+msgid "This post like"
+msgstr "Этот пост понравился "
+
+#: app/templates/_post_end_posta_to_user_page.html:10
+#: app/templates/_post_end_posta_to_user_page.html:17
+#: app/templates/_recomendation.html:12
+msgid "you and"
+msgstr "тебе и ещё"
+
+#: app/templates/_post_end_posta_to_user_page.html:14
+#: app/templates/_post_end_posta_to_user_page.html:21
+#: app/templates/_post_end_posta_to_user_page.html:26
+#: app/templates/_recomendation.html:16
+msgid "user"
+msgstr "человеку"
+
+#: app/templates/_post_end_posta_to_user_page.html:14
+#: app/templates/_post_end_posta_to_user_page.html:21
+#: app/templates/_post_end_posta_to_user_page.html:26
+#: app/templates/_recomendation.html:16
+msgid "s"
+msgstr "м"
+
+#: app/templates/_post_end_posta_to_user_page.html:16
+msgid "This post dislike"
+msgstr "Этот пост не понравился"
+
+#: app/templates/_post_end_posta_to_user_page.html:23
+#: app/templates/_recomendation.html:19
+msgid "This post has been read"
+msgstr "Этот пост прочитан"
+
+#: app/templates/_post_end_posta_to_user_page.html:23
+#: app/templates/_post_end_posta_to_user_page.html:25
+#: app/templates/_recomendation.html:19 app/templates/_recomendation.html:21
+msgid "times"
+msgstr "раз"
+
+#: app/templates/_post_end_posta_to_user_page.html:25
+#: app/templates/_recomendation.html:21
+msgid "This post has been commented time  "
+msgstr "Этот пост прочитан"
+
+#: app/templates/_post_end_posta_to_user_page.html:26
+msgid "This post was later postponed by "
+msgstr "Отложыли на потом"
+
+#: app/templates/_private_messages.html:39
+msgid "Press to answer this message"
+msgstr "Ответить на сообщения"
+
+#: app/templates/_private_messages.html:39
+msgid "Answer"
+msgstr "Ответ"
+
+#: app/templates/about.html:4 app/templates/base.html:51
+msgid "About"
+msgstr "О сайте"
+
+#: app/templates/base.html:39 app/templates/section.html:4
+msgid "Sections"
+msgstr "Раздулы"
+
+#: app/templates/base.html:45
+msgid "MyProjects"
+msgstr "МоиПроэкты"
+
+#: app/templates/base.html:57 app/templates/coperation.html:5
+msgid "Cooperation"
+msgstr "Сотруднечество"
+
+#: app/templates/base.html:81
+msgid "Messages"
+msgstr "Сообщения"
+
+#: app/templates/base.html:99
+msgid "Login"
+msgstr "Вход"
+
+#: app/templates/base.html:103
+msgid "Logout"
+msgstr "Выход"
+
+#: app/templates/base.html:157
+msgid "Contacts for cooperation: "
+msgstr "Контакты для сотрудничества:"
+
+#: app/templates/base.html:181
+msgid "Error: Could not contact server."
+msgstr "Ошибка: Нет соединения с сервером"
+
+#: app/templates/coperation.html:7
+msgid "Please log in or register to use the feedback form on this page."
+msgstr "Пожалуйста войдите или зареєструйтесь чтобы воспользоваться формой обратной связи "
+
+#: app/templates/coperation.html:21
+msgid ""
+"Hi my nickname is Pluszz. I am an amateur engineer from Ukraine. I like "
+"IT, but I don't do it professionally. I am currently interested in web "
+"development on python 3, so I made this blog engine short written in a"
+msgstr ""
+«Привет, меня зовут Pluszz. Я инженер-любитель из Украины. Мне нравится»
+«IT, но я не занимаюсь этим профессионально. Сейчас меня интересует интернет»
+"разработка на python 3, я сделал этот движок блога  на"
+
+#: app/templates/coperation.html:23
+msgid "Since I studied the flask on"
+msgstr "Поскольку я изучал Flask по"
+
+#: app/templates/coperation.html:24
+msgid "Miguel Greenberg's \"The Flask Mega-Tutorial\""
+msgstr "\"The Flask Mega-Tutorial\" Мигеля Гринберга"
+
+#: app/templates/coperation.html:25
+msgid ""
+"there are significant particles of his code in my appendix. Because the "
+"author is as poor as a church mouse, this blog is hosted for free on the "
+"service"
+msgstr ""
+"в моем приложении есть некоторые уламки его кода. Потому что"
+"автор беден, как церковная мышь, этот блог размещен бесплатно на сайте"
+"услуга"
+
+#: app/templates/coperation.html:29
+msgid ""
+"I will be grateful for suggestions in the comments or private messages. "
+"When criticizing, please remember that I am not a magician, I'm just "
+"learning."
+msgstr ""
+
+#: app/templates/coperation.html:32
+msgid ""
+"This page contains information about cooperation. If you have interesting"
+" projects and you lack hands, please contact me. I always agree to help. "
+"If you have uninteresting projects with the opportunity to earn well, "
+"please contact me."
+msgstr ""
+
+#: app/templates/coperation.html:35
+msgid "What can I do:"
+msgstr ""
+«На этой странице размещена информация для сотрудничества. Если есть интересные»
+«проекты, и вам не хватает рук, пожалуйста, свяжитесь со мной. Я всегда согласен помочь».
+«Если у вас есть неинтересные проекты с возможностью хорошо заработать»,
+"пожалуйста, свяжитесь со мной буду благодарен."
+
+#: app/templates/coperation.html:53
+msgid "You can contact me by mail or telegram"
+msgstr "Вы можете связаться со мной через емейл или в телеграм"
+
+#: app/templates/coperation.html:55
+msgid "or here via the"
+msgstr "Или здесь через "
+
+#: app/templates/coperation.html:57
+msgid "feedback form"
+msgstr "Форму обратной связи"
+
+#: app/templates/coperation.html:59
+msgid "indicating how you can be contacted"
+msgstr "Оставив свои даные для обратной связи"
+
+#: app/templates/coperation.html:63
+msgid "My telegram:"
+msgstr "Мой телегам"
+
+#: app/templates/coperation.html:65
+msgid "My email"
+msgstr "Мой емайл"
+
+#: app/templates/coperation.html:78 app/templates/dialog.html:73
+#: app/templates/post.html:88 app/templates/send_message.html:15
+msgid "* This form supports"
+msgstr "Ета форма поддерживает "
+
+#: app/templates/coperation.html:80 app/templates/dialog.html:75
+#: app/templates/post.html:90 app/templates/send_message.html:17
+msgid "bbcode"
+msgstr "bbcode"
+
+#: app/templates/dialog.html:10 app/templates/user_page.html:10
+msgid "Registration"
+msgstr "Регистрация"
+
+#: app/templates/dialog.html:12 app/templates/user_page.html:12
+msgid "Last seen on"
+msgstr "В последний раз на сайте"
+
+#: app/templates/dialog.html:17 app/templates/user_page.html:17
+msgid "Reputation"
+msgstr "Репутация"
+
+#: app/templates/dialog.html:63
+#, python-format
+msgid "Send New Message to %(recipient)s:"
+msgstr "Отправить новое сообщение %(recipient)у:"
+
+#: app/templates/index.html:8
+msgid ""
+"This is the main page of this blog. Here \n"
+"                              you can see a list of all posts without \n"
+"                              division into sections. Thank you for "
+"visiting me."
+msgstr ""
+"Это главная страница этого блога. Здесь \ n"
+"вы можете увидеть список всех сообщений без \ n"
+"разделение на разделы. Спасибо что "
+"Зашли ко мне."
+
+#: app/templates/post.html:19
+msgid "Original language the post is: "
+msgstr "Исходный язык публикации:"
+
+#: app/templates/post.html:19
+msgid "translate into your language ?"
+msgstr "перевести на твой язык"
+
+#: app/templates/post.html:27
+msgid "Translate"
+msgstr "Перевод"
+
+#: app/templates/post.html:62
+msgid "Unselect Post"
+msgstr ""
+
+#: app/templates/post.html:64
+msgid "Select Post"
+msgstr "Выбрать"
+
+#: app/templates/post.html:67
+msgid "Unhidden Post"
+msgstr "Показать"
+
+#: app/templates/post.html:69
+msgid "Hidden Post"
+msgstr "Спрятать"
+
+#: app/templates/post.html:71
+msgid "Delete Post"
+msgstr "Удалить пост"
+
+#: app/templates/post.html:72
+msgid "Edit Post"
+msgstr "Редактировать пост"
+
+#: app/templates/post.html:112
+msgid "Newer comments"
+msgstr "Туда"
+
+#: app/templates/post.html:115
+msgid "Older comments"
+msgstr "Сюда"
+
+#: app/templates/projects.html:5
+msgid "My projects"
+msgstr "Мои Проэкты"
+
+#: app/templates/projects.html:7
+msgid ""
+"On this page I will post links to my little funny projects and related "
+"materials."
+msgstr ""
+"На этой странице я буду размещать ссылки на мои маленькие забавные проекты и связанные с ними "
+"материалы"
+
+#: app/templates/search.html:4
+msgid "Type any word in the text box and press \"Enter\" to search"
+msgstr "Введи текст в поле поиска и нжмите \"Enter\" "
+
+#: app/templates/search.html:12
+msgid "Search Results"
+msgstr "Результаты поиска"
+
+#: app/templates/search.html:23
+msgid "Previous results"
+msgstr "Туда"
+
+#: app/templates/search.html:28
+msgid "Next results"
+msgstr "Сюда"
+
+#: app/templates/send_message.html:5
+#, python-format
+msgid "Send Message to %(recipient)s:"
+msgstr "Написать сообщение %(recipient)у:"
+
+#: app/templates/user_page.html:20
+msgid "Send message"
+msgstr "Отправить сообищение"
+
+#: app/templates/user_page.html:22
+msgid "Edit your profile"
+msgstr "Редактировать профиль"
+
+#: app/templates/user_page.html:30
+msgid "Favorite posts"
+msgstr "Понравившиеся публикациии"
+
+#: app/templates/user_page.html:31
+msgid "Read later"
+msgstr "На потом"
+
+#: app/templates/user_page.html:32
+msgid "Recomendation"
+msgstr "Рекомендации"
+
+#: app/templates/user_page.html:33
+msgid "messages"
+msgstr "сообщения"
+
+#: app/templates/user_page.html:35
+msgid "users"
+msgstr "пользователи"
+
+#: app/templates/auth/login.html:17
+msgid "New User?"
+msgstr "Новый пользователь?"
+
+#: app/templates/auth/login.html:17
+msgid "Click to Register!"
+msgstr "Регистрация"
+
+#: app/templates/auth/login.html:19
+msgid "Forgot Your Password?"
+msgstr "Повторите пароль"
+
+#: app/templates/auth/login.html:20
+msgid "Click to Reset It"
+msgstr "Сброс пароля"
+
+#: app/templates/auth/reset_password.html:5
+msgid "Reset Your Password"
+msgstr "Твой пароль зброшен"
+
+#: app/templates/errors/404.html:4
+msgid "Not Found"
+msgstr "Не найдено"
+
+#: app/templates/errors/404.html:5 app/templates/errors/500.html:6
+msgid "Back"
+msgstr "Назад"
+
+#: app/templates/errors/500.html:4
+msgid "An unexpected error has occurred"
+msgstr "Произошла неожиданная ошибка"
+
+#: app/templates/errors/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr "Администратор был уведомлен. Извините за причиненные неудобства!"
+

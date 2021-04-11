@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+
+{% block app_content %}
+					<div class="title-end-discription-block-h1">
+                      <h1>PluszzBlog</h1>
+                      <div class="discription-this-page-inborder discription-page">
+                        {{ _('This is the main page of this blog. Here 
+                              you can see a list of all posts without 
+                              division into sections. Thank you for visiting me.') }}
+                      </div>
+                    </div>
+                    <br>
+			                 
+                    <div class="index-post-form">
+                      {% if form %}
+                        {% if user.username=='pluszz' %}
+                            <form action="" method="post" class="in-form" novalidate>
+                              {{ form.hidden_tag() }}
+                              {{ form.post_title.label }}
+                              {{ form.post_title(size=100, class="editable_pole") }}
+                              {% for error in form.post_title.errors %}
+                                <span class="discription-this-page-inborder">[{{ error }}]</span>
+                              {% endfor %}
+                              {{ form.post_section.label }}
+                              {{ form.post_section(size=100, class="editable_pole") }}
+                              {% for error in form.post_section.errors %}
+                                <span class="discription-this-page-inborder">[{{ error }}]</span>
+                              {% endfor %}
+                              {{ form.description.label }}
+                              {{ form.description(size=100, class="editable_pole") }}
+                              {% for error in form.description.errors %}
+                                <span class="discription-this-page-inborder">[{{ error }}]</span>
+                              {% endfor %}
+                              {{ form.post.label }}
+                              {{ form.post(rows='20', class="editable_pole")}}
+                              {% for error in form.post.errors %}
+                                <span class="discription-this-page-inborder">[{{ error }}]</span>
+                              {% endfor %}
+                              {{ form.title_image.label }} 
+                              {{ form.title_image(size=100, class="editable_pole")}}
+                              {% for error in form.title_image.errors %}
+                                <span class="discription-this-page-inborder">[{{ error }}]</span>
+                              {% endfor %}                            
+                              <br>
+                              <div class="index-post-button button" id="index-post-button">
+                               {{ form.submit() }}
+                              </div>
+                            </form> 
+                        {% endif %}
+                      {% endif %}
+                    </div>
+                  <div class="index-post-display">
+            	    <div class="index-post-list">
+                	  {% for post in posts.items %}
+                      {% if post.hidden_post!=True or user.username=='pluszz' %}
+        				        {% include '_post.html' %}
+                      {% endif %}
+    					      {% endfor %}
+    				      </div>
+   					      <div class="index-pager pager" id="index-pager">
+			                <a class="user-page-button{% if not prev_url %}-disabled{% endif %} control-pager" href="{{ prev_url or '#' }}">
+			                    <span aria-hidden="true" ">&larr;</span> {{ _('Newer posts') }}
+               				</a>
+                			<a class="user-page-button{% if not next_url %}-disabled{% endif %} control-pager" href="{{ next_url or '#' }}">
+                    			{{ _('Older posts') }} <span aria-hidden="true">&rarr;</span>
+                			</a>
+        			    </div> 
+                  </div>      			
+
+{% endblock %}

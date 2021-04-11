@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+	 <div class="user_table_in_user_page table table-hover">
+        <img class="avatar-in-user-page" src="{{ user.avatar(256) }}">
+        <div>
+          <div class="user-information-in-usertable">
+            <h1>{{ user.username }}</h1>
+            {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+            <p>{{ _('Registration') }}: {{ moment(user.registration_time).format('LLL') }}</p>
+            {% if user.last_seen %}
+              <p>{{ _('Last seen on') }}: {{ moment(user.last_seen).format('LLL') }}</p>
+            {% endif %}
+            {% if user.status %}
+ 			  {{ user.username+" wants to say: " }} <b>{{ user.status }}</b>
+ 			{% endif %}
+ 			<p>{{ _('Reputation') }}:{{ user.reputation() }}</p>
+ 		  </div>
+ 			{% if user != current_user %}
+ 			  <a class="user-page-button" href="{{ url_for('main.send_message',recipient=user.username) }}">{{ _('Send message') }}</a>
+            {% else %}  
+              <a class="user-page-button" href="{{ url_for('main.edit_profile') }}">{{ _('Edit your profile') }}</a>
+ 			{% endif %}
+        </div>
+    </div>
+
+    <div class="user_page_in_user_page">
+    	<div clas="user_menu" id="user_menu">
+    	{% if user == current_user %}
+            <a class="user-page-button" href="{{ url_for('main.user', username=user.username, category='_favorite_posts') }}">{{ _('Favorite posts') }}</a>
+            <a class="user-page-button" href="{{ url_for('main.user', username=user.username, category='_read_later') }}">{{ _('Read later') }}</a>
+            <a class="user-page-button" href="{{ url_for('main.user', username=user.username, category='_recomendation') }}">{{ _('Recomendation') }}</a>
+            <a class="user-page-button" href="{{ url_for('main.messages_inbox') }}">{{ _('messages') }}</a>
+            {% if user.username=='pluszz' %}
+            	<a class="user-page-button" href="{{ url_for('main.user', username=user.username, category='_users') }}">{{ _('users') }}</a>
+            {% endif %}
+        {% endif %}
+        <br>
+        <br>
+        <br>
+        <div>
+            {% include page_to_vievs %}
+        </div>    
+    </div>
+</div>
+{% endblock %}

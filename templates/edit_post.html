@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+
+{% block app_content %}
+
+                    <div class="index-post-form">
+                        {% if user.username=='pluszz' %}
+                            <form action="" method="post" class="in-form" novalidate>
+                              {{ form.hidden_tag() }}
+                              {{ form.post_title.label }}
+                              {{ form.post_title(size=100, class="editable_pole", value = post.title) }}
+                              {% for error in form.post_title.errors %}
+                                <span class="discription-this-page-inborder">[{{ error }}]</span>
+                              {% endfor %}
+                              {{ form.post_section.label }}
+                              {{ form.post_section(size=100, class="editable_pole", value = post.section) }}
+                              {% for error in form.post_section.errors %}
+                                <span class="discription-this-page-inborder">[{{ error }}]</span>
+                              {% endfor %}
+                              {{ form.description.label }}
+                              {{ form.description(size=100, class="editable_pole", value = post.description) }}
+                              {% for error in form.description.errors %}
+                                <span class="discription-this-page-inborder">[{{ error }}]</span>
+                              {% endfor %}
+          
+                              {{ form.post.label }}
+                              <textarea class="editable_pole" id="post" name="post" required="" rows="20">{{ post.body }}</textarea>
+                              {% for error in form.post.errors %}
+                                <span class="discription-this-page-inborder">[{{ error }}]</span>
+                              {% endfor %}
+                              {{ form.title_image.label }} 
+                              {{ form.title_image(size=100, class="editable_pole", value = post.title_image)}}
+                              {% for error in form.title_image.errors %}
+                                <span class="discription-this-page-inborder">[{{ error }}]</span>
+                              {% endfor %}                            
+                              <br>
+                              <div class="index-post-button button" id="index-post-button">
+                               {{ form.submit() }}
+                              </div>
+                            </form> 
+                        {% endif %}
+                    </div>
+{% endblock %}
+
+
+ 

@@ -1,0 +1,588 @@
+# Ukrainian translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-04-10 18:56+0200\n"
+"PO-Revision-Date: 2021-04-10 18:56+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: uk\n"
+"Language-Team: uk <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: app/__init__.py:19
+msgid "Please log in to access this page."
+msgstr "Будь ласка, авторизуйтесь, щоб отримати доступ до цієї сторінки"
+
+#: app/translate.py:12
+msgid "Error: the translation service failed."
+msgstr "Помилка: сервіс перекладу не відповідає" 
+
+#: app/auth/email.py:8
+msgid "Pluszzblog Reset Your Password"
+msgstr "Твій пароль скинуто"
+
+#: app/auth/forms.py:9 app/auth/forms.py:16 app/main/forms.py:61
+msgid "Username"
+msgstr "Ім'я користувача"
+
+#: app/auth/forms.py:10 app/auth/forms.py:18 app/auth/forms.py:39
+#: app/main/forms.py:80
+msgid "Password"
+msgstr "Пароль"
+
+#: app/auth/forms.py:11
+msgid "Remember Me"
+msgstr "Запам'ятати мене"
+
+#: app/auth/forms.py:12 app/auth/routes.py:27 app/templates/auth/login.html:5
+msgid "Sign In"
+msgstr "Вхід"
+
+#: app/auth/forms.py:17 app/auth/forms.py:34
+msgid "Email"
+msgstr "Електронна пошта"
+
+#: app/auth/forms.py:19 app/auth/forms.py:41 app/main/forms.py:81
+msgid "Repeat Password"
+msgstr "Повторіть пароль"
+
+#: app/auth/forms.py:20 app/auth/routes.py:48
+#: app/templates/auth/register.html:5
+msgid "Register"
+msgstr "Зареєструйтесь"
+
+#: app/auth/forms.py:25 app/main/forms.py:72
+msgid "Please use a different username."
+msgstr "Користувач з таким ніком вже зареєстрований. Спробуйте щось інше."
+
+#: app/auth/forms.py:30
+msgid "Please use a different email address."
+msgstr "Поштова скринька використвується іншим користувачем. Спробуйте щось інше."
+
+#: app/auth/forms.py:35 app/auth/forms.py:43
+msgid "Request Password Reset"
+msgstr "Запит на зміну паролю"
+
+#: app/auth/routes.py:20
+msgid "Invalid username or password"
+msgstr "Неправильне ім'я користувача або пароль"
+
+#: app/auth/routes.py:46
+msgid "Congratulations, you are now a registered user!"
+msgstr "Вітаємо, ви успішно зареєструвалися"
+
+#: app/auth/routes.py:62
+msgid "Check your email for the instructions to reset your password"
+msgstr "Пуревірте свою електронну скриньку. Ми вислали вам інструкції для зміни  пролю"
+
+#: app/auth/routes.py:65 app/templates/auth/reset_password_request.html:5
+msgid "Reset Password"
+msgstr ""
+
+#: app/auth/routes.py:80
+msgid "Your password has been reset."
+msgstr "Твій пароль успішно змінено"
+
+#: app/main/forms.py:18
+msgid "Post Title"
+msgstr "Заголовок допису"
+
+#: app/main/forms.py:19
+msgid "Post Section"
+msgstr ""
+
+#: app/main/forms.py:20
+msgid "Post Description"
+msgstr "Опис допису"
+
+#: app/main/forms.py:21
+msgid "Say Something"
+msgstr "Скажіть щось по темі"
+
+#: app/main/forms.py:22
+msgid "Title Image"
+msgstr "Зголовочне зображення"
+
+#: app/main/forms.py:23 app/main/forms.py:30 app/main/forms.py:52
+msgid "Submit"
+msgstr "Підтвердити"
+
+#: app/main/forms.py:29
+msgid "Write your comment"
+msgstr "Напишіть свій коментар"
+
+#: app/main/forms.py:35 app/main/routes.py:265 app/main/routes.py:271
+#: app/templates/base.html:63
+msgid "Search"
+msgstr "Пошук"
+
+#: app/main/forms.py:50
+msgid "Message Title"
+msgstr "Заголовок повідомленя"
+
+#: app/main/forms.py:51
+msgid "Message"
+msgstr "Повідомлення"
+
+#: app/main/forms.py:62 app/main/forms.py:82 app/main/forms.py:89
+msgid "Change"
+msgstr "Змінити"
+
+#: app/main/forms.py:88
+msgid "Status"
+msgstr "Статус"
+
+#: app/main/routes.py:137 app/main/routes.py:214 app/main/routes.py:232
+msgid "Your message has been sent."
+msgstr "Ваше повідомлення надіслано."
+
+#: app/main/routes.py:184 app/templates/_messages.html:2
+msgid "Inbox Messages"
+msgstr "Вхідні повідомлення"
+
+#: app/main/routes.py:199 app/templates/_messages.html:2
+msgid "Outbox Messages"
+msgstr "Вихідні повідомлення"
+
+#: app/main/routes.py:216
+msgid "Send Message"
+msgstr "Надіслати повідомлення"
+
+#: app/main/routes.py:238
+msgid "Dialog by {}:"
+msgstr "Діалог з {}"
+
+#: app/main/routes.py:363
+msgid "Your username has changed."
+msgstr "Твій нік мінено"
+
+#: app/main/routes.py:371
+msgid "Your password has changed."
+msgstr "Пароль змінено"
+
+#: app/main/routes.py:378
+msgid "Your staus has changed."
+msgstr "Твій статус успішно змінено"
+
+#: app/main/routes.py:380
+msgid "Edit Profile"
+msgstr "Редагувати профіль"
+
+#: app/templates/_edit_profile.html:43
+msgid "Edit Your Avatar"
+msgstr "Зміна аватарки"
+
+#: app/templates/_favorite_posts.html:7 app/templates/_read_later.html:7
+#: app/templates/index.html:63
+msgid "Newer posts"
+msgstr "Туди"
+
+#: app/templates/_favorite_posts.html:10 app/templates/_read_later.html:10
+#: app/templates/index.html:66
+msgid "Older posts"
+msgstr "Сюди"
+
+#: app/templates/_messages.html:10 app/templates/dialog.html:92
+msgid "Newer messages"
+msgstr "Туди"
+
+#: app/templates/_messages.html:15 app/templates/dialog.html:97
+msgid "Older messages"
+msgstr "Сюди"
+
+#: app/templates/_post.html:29
+msgid "likes"
+msgstr "Сподобалось"
+
+#: app/templates/_post.html:35
+msgid "dislikes"
+msgstr "Не сподобалось"
+
+#: app/templates/_post.html:41
+msgid "vievs"
+msgstr "Перегляди"
+
+#: app/templates/_post.html:47
+msgid "komments"
+msgstr "Коментарі"
+
+#: app/templates/_post_end_posta_to_user_page.html:7
+#: app/templates/_recomendation.html:9
+msgid "You"
+msgstr "Вам"
+
+#: app/templates/_post_end_posta_to_user_page.html:7
+#: app/templates/_recomendation.html:9
+msgid "don't like"
+msgstr "не сподобався"
+
+#: app/templates/_post_end_posta_to_user_page.html:7
+#: app/templates/_recomendation.html:9
+msgid "this post"
+msgstr "цей допис"
+
+#: app/templates/_post_end_posta_to_user_page.html:9
+#: app/templates/_recomendation.html:11
+msgid "This post like"
+msgstr "Цей допис вподобали"
+
+#: app/templates/_post_end_posta_to_user_page.html:10
+#: app/templates/_post_end_posta_to_user_page.html:17
+#: app/templates/_recomendation.html:12
+msgid "you and"
+msgstr "ви і ще"
+
+#: app/templates/_post_end_posta_to_user_page.html:14
+#: app/templates/_post_end_posta_to_user_page.html:21
+#: app/templates/_post_end_posta_to_user_page.html:26
+#: app/templates/_recomendation.html:16
+msgid "user"
+msgstr "користувач"
+
+#: app/templates/_post_end_posta_to_user_page.html:14
+#: app/templates/_post_end_posta_to_user_page.html:21
+#: app/templates/_post_end_posta_to_user_page.html:26
+#: app/templates/_recomendation.html:16
+msgid "s"
+msgstr "ів"
+
+#: app/templates/_post_end_posta_to_user_page.html:16
+msgid "This post dislike"
+msgstr "Цей допис не сподобався"
+
+#: app/templates/_post_end_posta_to_user_page.html:23
+#: app/templates/_recomendation.html:19
+msgid "This post has been read"
+msgstr "Цей допис прочитано "
+
+#: app/templates/_post_end_posta_to_user_page.html:23
+#: app/templates/_post_end_posta_to_user_page.html:25
+#: app/templates/_recomendation.html:19 app/templates/_recomendation.html:21
+msgid "times"
+msgstr "раз"
+
+#: app/templates/_post_end_posta_to_user_page.html:25
+#: app/templates/_recomendation.html:21
+msgid "This post has been commented time  "
+msgstr "Цей допис прокоментовано"
+
+#: app/templates/_post_end_posta_to_user_page.html:26
+msgid "This post was later postponed by "
+msgstr "Прочитати цей допис пізнше хочуть"
+
+#: app/templates/_private_messages.html:39
+msgid "Press to answer this message"
+msgstr "Відповісти на це повідомлення"
+
+#: app/templates/_private_messages.html:39
+msgid "Answer"
+msgstr "Відповідь"
+
+#: app/templates/about.html:4 app/templates/base.html:51
+msgid "About"
+msgstr "Про сторінку"
+
+#: app/templates/base.html:39 app/templates/section.html:4
+msgid "Sections"
+msgstr "Розділи"
+
+#: app/templates/base.html:45
+msgid "MyProjects"
+msgstr "Проекти"
+
+#: app/templates/base.html:57 app/templates/coperation.html:5
+msgid "Cooperation"
+msgstr ""
+
+#: app/templates/base.html:81
+msgid "Messages"
+msgstr "Повідомлення"
+
+#: app/templates/base.html:99
+msgid "Login"
+msgstr "Вхід"
+
+#: app/templates/base.html:103
+msgid "Logout"
+msgstr "Вихід"
+
+#: app/templates/base.html:157
+msgid "Contacts for cooperation: "
+msgstr "Контактна інформація для співпраці:"
+
+#: app/templates/base.html:181
+msgid "Error: Could not contact server."
+msgstr "Помилка: немає з'єднання з сервером."
+
+#: app/templates/coperation.html:7
+msgid "Please log in or register to use the feedback form on this page."
+msgstr "Будь ласка ввійдіть або авторизуйтесь для використання форми зворотнього зв'язку"
+
+#: app/templates/coperation.html:21
+msgid ""
+"Hi my nickname is Pluszz. I am an amateur engineer from Ukraine. I like "
+"IT, but I don't do it professionally. I am currently interested in web "
+"development on python 3, so I made this blog engine short written in a"
+msgstr ""
+"Привіт, мій нікнейм Pluszz. Я інженер-аматор з України. Мені подобаються"
+"ІТ-технології, однак я не займаюсь цим професійно. Зараз мене цікавить розробка"
+"інтернет аплікацій на python 3, в тракті навчання я написав двигло цього блогу на"
+
+#: app/templates/coperation.html:23
+msgid "Since I studied the flask on"
+msgstr "Оскільки я вивчав Flask"
+
+#: app/templates/coperation.html:24
+msgid "Miguel Greenberg's \"The Flask Mega-Tutorial\""
+msgstr "по \"The Flask Mega-Tutorial\" Мігеля грінберга "
+
+#: app/templates/coperation.html:25
+msgid ""
+"there are significant particles of his code in my appendix. Because the "
+"author is as poor as a church mouse, this blog is hosted for free on the "
+"service"
+msgstr ""
+"у моєму додатку є значні частинки його коду. Оскільки"
+"автор такий же бідний, як церковна миша, цей блог розміщується безкоштовно на"
+"Heroku"
+
+#: app/templates/coperation.html:29
+msgid ""
+"I will be grateful for suggestions in the comments or private messages. "
+"When criticizing, please remember that I am not a magician, I'm just "
+"learning."
+msgstr ""
+"Буду вдячний за пропозиції за будь які пропозиції щодо покращення /n коду  чи текстів."
+"Під час критики, будь ласка, пам'ятайте, що я не чарівник, я лише"
+"навчаюся тому без матів будьласка ))".
+
+#: app/templates/coperation.html:32
+msgid ""
+"This page contains information about cooperation. If you have interesting"
+" projects and you lack hands, please contact me. I always agree to help. "
+"If you have uninteresting projects with the opportunity to earn well, "
+"please contact me."
+msgstr ""
+"Ця сторінка містить інформацію для співпраці. Якщо у вас є цікаві"
+"Проекти, і вам бракує рук, будь ласка, зв'яжіться зі мною. Я завжди погоджуюсь допомогти"
+"Якщо у вас є нецікаві проекти з можливістю непогано заробляти",
+"Будь ласка, зв'яжіться зі мною."
+
+#: app/templates/coperation.html:35
+msgid "What can I do:"
+msgstr "На чім я знаюся"
+
+#: app/templates/coperation.html:53
+msgid "You can contact me by mail or telegram"
+msgstr "Зв'яжіться зі мною через емайл чи телеграм"
+
+#: app/templates/coperation.html:55
+msgid "or here via the"
+msgstr "або тут через"
+
+#: app/templates/coperation.html:57
+msgid "feedback form"
+msgstr "форму зворотнього зв'язку"
+
+#: app/templates/coperation.html:59
+msgid "indicating how you can be contacted"
+msgstr "вказавши, як з вами можна зв’язатися"
+
+#: app/templates/coperation.html:63
+msgid "My telegram:"
+msgstr "Мій телеграм"
+
+#: app/templates/coperation.html:65
+msgid "My email"
+msgstr "Моя потова скринька"
+
+#: app/templates/coperation.html:78 app/templates/dialog.html:73
+#: app/templates/post.html:88 app/templates/send_message.html:15
+msgid "* This form supports"
+msgstr "Ця форма підтримує"
+
+#: app/templates/coperation.html:80 app/templates/dialog.html:75
+#: app/templates/post.html:90 app/templates/send_message.html:17
+msgid "bbcode"
+msgstr "bbcode"
+
+#: app/templates/dialog.html:10 app/templates/user_page.html:10
+msgid "Registration"
+msgstr "Регыстрація"
+
+#: app/templates/dialog.html:12 app/templates/user_page.html:12
+msgid "Last seen on"
+msgstr "В останнє на сайті"
+
+#: app/templates/dialog.html:17 app/templates/user_page.html:17
+msgid "Reputation"
+msgstr "Репутація"
+
+#: app/templates/dialog.html:63
+#, python-format
+msgid "Send New Message to %(recipient)s:"
+msgstr "Надіслати нове повідомлення %(recipient)а:"
+
+#: app/templates/index.html:8
+msgid ""
+"This is the main page of this blog. Here \n"
+"                              you can see a list of all posts without \n"
+"                              division into sections. Thank you for "
+"visiting me."
+msgstr ""
+"Це головна сторінка цього блогу. Тут \ n"
+"ви можете побачити список усіх дописів без \ n"
+"поділ на секції. Дякую, що"
+"завітали до мене".
+
+#: app/templates/post.html:19
+msgid "Original language the post is: "
+msgstr "Мова оригіналу допису"
+
+#: app/templates/post.html:19
+msgid "translate into your language ?"
+msgstr "перкласти допис на вашу мову?"
+
+#: app/templates/post.html:27
+msgid "Translate"
+msgstr "Перекласти"
+
+#: app/templates/post.html:62
+msgid "Unselect Post"
+msgstr "Зняти виділення"
+
+#: app/templates/post.html:64
+msgid "Select Post"
+msgstr "Виділити"
+
+#: app/templates/post.html:67
+msgid "Unhidden Post"
+msgstr "Показати"
+
+#: app/templates/post.html:69
+msgid "Hidden Post"
+msgstr "Сховати"
+
+#: app/templates/post.html:71
+msgid "Delete Post"
+msgstr "Видалити"
+
+#: app/templates/post.html:72
+msgid "Edit Post"
+msgstr "Редагувати"
+
+#: app/templates/post.html:112
+msgid "Newer comments"
+msgstr "Туди"
+
+#: app/templates/post.html:115
+msgid "Older comments"
+msgstr "Сюди"
+
+#: app/templates/projects.html:5
+msgid "My projects"
+msgstr "Мої проекти"
+
+#: app/templates/projects.html:7
+msgid ""
+"On this page I will post links to my little funny projects and related "
+"materials."
+msgstr ""
+"На цій сторінці я розміщатиму посилання на свої маленькі кумедні проекти"
+"та пов'язані з ними матеріали".
+
+#: app/templates/search.html:4
+msgid "Type any word in the text box and press \"Enter\" to search"
+msgstr "Введіть потрібне слово у текстове поле та натисніть \ "Enter \" для пошуку"
+
+#: app/templates/search.html:12
+msgid "Search Results"
+msgstr "Результати пошуку"
+
+#: app/templates/search.html:23
+msgid "Previous results"
+msgstr "Туди"
+
+#: app/templates/search.html:28
+msgid "Next results"
+msgstr "Сюди"
+
+#: app/templates/send_message.html:5
+#, python-format
+msgid "Send Message to %(recipient)s:"
+msgstr "Надіслати повідомлення до %(recipient)а:"
+
+#: app/templates/user_page.html:20
+msgid "Send message"
+msgstr "Надіслати повідомлення"
+
+#: app/templates/user_page.html:22
+msgid "Edit your profile"
+msgstr "Редагувати профіль"
+
+#: app/templates/user_page.html:30
+msgid "Favorite posts"
+msgstr "Вподобані дописи"
+
+#: app/templates/user_page.html:31
+msgid "Read later"
+msgstr "Прочитати потім"
+
+#: app/templates/user_page.html:32
+msgid "Recomendation"
+msgstr "Рекомендауії"
+
+#: app/templates/user_page.html:33
+msgid "messages"
+msgstr "Повідомлення"
+
+#: app/templates/user_page.html:35
+msgid "users"
+msgstr "Користувачі"
+
+#: app/templates/auth/login.html:17
+msgid "New User?"
+msgstr "Новий користувач?"
+
+#: app/templates/auth/login.html:17
+msgid "Click to Register!"
+msgstr "Клацніть для реєстрації"
+
+#: app/templates/auth/login.html:19
+msgid "Forgot Your Password?"
+msgstr "Повторіть пароль"
+
+#: app/templates/auth/login.html:20
+msgid "Click to Reset It"
+msgstr "Скинути пароль"
+
+#: app/templates/auth/reset_password.html:5
+msgid "Reset Your Password"
+msgstr "Скидання вашого паролю"
+
+#: app/templates/errors/404.html:4
+msgid "Not Found"
+msgstr "Не знайдено"
+
+#: app/templates/errors/404.html:5 app/templates/errors/500.html:6
+msgid "Back"
+msgstr "Назад"
+
+#: app/templates/errors/500.html:4
+msgid "An unexpected error has occurred"
+msgstr "Сталася несподівана помилка"
+
+#: app/templates/errors/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr "Адміністратора повідомлено. Вибачте за незручності!"
+

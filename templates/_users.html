@@ -1,0 +1,36 @@
+<div class="index-post-display">
+    <div class="index-post-list">
+        {% for user in liked_posts.items %}
+		
+	            <div class="post-title-block" id="user-{{ user.id }}">               
+                    <div class="section-timestamp" id="section-timestamp-{{ user.id }}">
+                        <div class="section" id="section-{{ user.id }}">
+                            {{ _('registration') }}
+                        </div>
+                        <div class="timestamp" id="timestamp-{{ user.id }}" align="right">
+                            {{ moment(user.registration_time).fromNow() }}
+                        </div>
+                    </div>
+                    <div class="image-discription" id="img-description-{{ user.id }}">
+                 
+                    <div class="user_title-user_discription" id="title-discription-{{ user.id }}" align="left">
+
+                      <h4 class="featurette-heading" id="featurette-heading-{{ user.id }}" align="left">            
+                        <a href="{{ url_for('main.user', username=user.username) }}">{{ user.username }}.</a>
+                      </h4>
+                      <div class="title-discription">
+                         <a href="{{ url_for('main.user', username=user.username) }}">{{ user.status }}</a>
+                      </div>
+                    </div>
+        
+                    <div class="user-title-image" id="title_image-{{ user.id }}"
+                            align="right">
+                       <a href="{{ url_for('main.user', username=user.username) }}"><img class="featurette-image img-responsive" align="right" alt="500x500" src="{{ user.avatar(120) }}"  data-holder-rendered="true"></a>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <br>
+		{% endfor %}
+	</div>
+</div>

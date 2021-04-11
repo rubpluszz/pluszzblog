@@ -1,0 +1,588 @@
+# Polish translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-04-10 18:56+0200\n"
+"PO-Revision-Date: 2021-04-10 18:56+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pl\n"
+"Language-Team: pl <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && "
+"(n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: app/__init__.py:19
+msgid "Please log in to access this page."
+msgstr "Zaloguj się, aby uzyskać dostęp do tej strony."
+
+#: app/translate.py:12
+msgid "Error: the translation service failed."
+msgstr "Błąd: usługa tłumaczenia nie powiodła się."
+
+#: app/auth/email.py:8
+msgid "Pluszzblog Reset Your Password"
+msgstr "Pluszzblog twoje hasło zostało zresetowane"
+
+#: app/auth/forms.py:9 app/auth/forms.py:16 app/main/forms.py:61
+msgid "Username"
+msgstr "Nazwa Użytkownika"
+
+#: app/auth/forms.py:10 app/auth/forms.py:18 app/auth/forms.py:39
+#: app/main/forms.py:80
+msgid "Password"
+msgstr "hasło"
+
+#: app/auth/forms.py:11
+msgid "Remember Me"
+msgstr "Zapamiętaj mnie"
+
+#: app/auth/forms.py:12 app/auth/routes.py:27 app/templates/auth/login.html:5
+msgid "Sign In"
+msgstr "Zaloguj"
+
+#: app/auth/forms.py:17 app/auth/forms.py:34
+msgid "Email"
+msgstr "e-mail"
+
+#: app/auth/forms.py:19 app/auth/forms.py:41 app/main/forms.py:81
+msgid "Repeat Password"
+msgstr "Powtórz hasło"
+
+#: app/auth/forms.py:20 app/auth/routes.py:48
+#: app/templates/auth/register.html:5
+msgid "Register"
+msgstr "Zarejestrować"
+
+#: app/auth/forms.py:25 app/main/forms.py:72
+msgid "Please use a different username."
+msgstr "Użyj inną nazwe urzytkownika"
+
+#: app/auth/forms.py:30
+msgid "Please use a different email address."
+msgstr "Użyj inną skrzynke meilową"
+
+#: app/auth/forms.py:35 app/auth/forms.py:43
+msgid "Request Password Reset"
+msgstr "Prośba o zresetowanie hasła"
+
+#: app/auth/routes.py:20
+msgid "Invalid username or password"
+msgstr "Nieprawidłowa nazwa użytkownika lub hasło"
+
+#: app/auth/routes.py:46
+msgid "Congratulations, you are now a registered user!"
+msgstr "Gratulacje, jesteś teraz zarejestrowanym użytkownikiem!"
+
+#: app/auth/routes.py:62
+msgid "Check your email for the instructions to reset your password"
+msgstr "Sprawdź pocztę e-mail, aby uzyskać instrukcje do resetowania hasła."
+
+#: app/auth/routes.py:65 app/templates/auth/reset_password_request.html:5
+msgid "Reset Password"
+msgstr "Zresetuj hasło"
+
+#: app/auth/routes.py:80
+msgid "Your password has been reset."
+msgstr "Hasło zostało zresetowan"
+
+#: app/main/forms.py:18
+msgid "Post Title"
+msgstr "Tytuł posta"
+
+#: app/main/forms.py:19
+msgid "Post Section"
+msgstr "Sekcja postów"
+
+#: app/main/forms.py:20
+msgid "Post Description"
+msgstr "Opis postu"
+
+#: app/main/forms.py:21
+msgid "Say Something"
+msgstr "Powiedz coś"
+
+#: app/main/forms.py:22
+msgid "Title Image"
+msgstr "Obrazek tytułu"
+
+#: app/main/forms.py:23 app/main/forms.py:30 app/main/forms.py:52
+msgid "Submit"
+msgstr "Zatwierdź"
+
+#: app/main/forms.py:29
+msgid "Write your comment"
+msgstr "Napisz swój komentarz"
+
+#: app/main/forms.py:35 app/main/routes.py:265 app/main/routes.py:271
+#: app/templates/base.html:63
+msgid "Search"
+msgstr "Szukaj"
+
+#: app/main/forms.py:50
+msgid "Message Title"
+msgstr "Tytuł wiadomości"
+
+#: app/main/forms.py:51
+msgid "Message"
+msgstr "Wiadomości"
+
+#: app/main/forms.py:62 app/main/forms.py:82 app/main/forms.py:89
+msgid "Change"
+msgstr "Zmień"
+
+#: app/main/forms.py:88
+msgid "Status"
+msgstr "Status"
+
+#: app/main/routes.py:137 app/main/routes.py:214 app/main/routes.py:232
+msgid "Your message has been sent."
+msgstr "Twoja wiadomość została wysłana"
+
+#: app/main/routes.py:184 app/templates/_messages.html:2
+msgid "Inbox Messages"
+msgstr "Wiadomości w skrzynce odbiorczej"
+
+#: app/main/routes.py:199 app/templates/_messages.html:2
+msgid "Outbox Messages"
+msgstr "Wiadomości wysłane"
+
+#: app/main/routes.py:216
+msgid "Send Message"
+msgstr "Wyślij wiadomość"
+
+#: app/main/routes.py:238
+msgid "Dialog by {}:"
+msgstr "Dialog z {}:"
+
+#: app/main/routes.py:363
+msgid "Your username has changed."
+msgstr "Twoja nazwa użytkownika została zmieniona."
+
+#: app/main/routes.py:371
+msgid "Your password has changed."
+msgstr "Twoje hasło zostało zmienione."
+
+#: app/main/routes.py:378
+msgid "Your staus has changed."
+msgstr "Twój status zostało zmienione"
+
+#: app/main/routes.py:380
+msgid "Edit Profile"
+msgstr "Redaguj swój profil"
+
+#: app/templates/_edit_profile.html:43
+msgid "Edit Your Avatar"
+msgstr "Zmień awatare"
+
+#: app/templates/_favorite_posts.html:7 app/templates/_read_later.html:7
+#: app/templates/index.html:63
+msgid "Newer posts"
+msgstr "Nowsze publikacji"
+
+#: app/templates/_favorite_posts.html:10 app/templates/_read_later.html:10
+#: app/templates/index.html:66
+msgid "Older posts"
+msgstr "Starsze publikacji"
+
+#: app/templates/_messages.html:10 app/templates/dialog.html:92
+msgid "Newer messages"
+msgstr "Nowsze wiadomości "
+
+#: app/templates/_messages.html:15 app/templates/dialog.html:97
+msgid "Older messages"
+msgstr "Starsze wiadomości"
+
+#: app/templates/_post.html:29
+msgid "likes"
+msgstr "polubiłi"
+
+#: app/templates/_post.html:35
+msgid "dislikes"
+msgstr "nie lubią"
+
+#: app/templates/_post.html:41
+msgid "vievs"
+msgstr "Przeczytali to"
+
+#: app/templates/_post.html:47
+msgid "komments"
+msgstr "Komentarzy"
+
+#: app/templates/_post_end_posta_to_user_page.html:7
+#: app/templates/_recomendation.html:9
+msgid "You"
+msgstr "Ty"
+
+#: app/templates/_post_end_posta_to_user_page.html:7
+#: app/templates/_recomendation.html:9
+msgid "don't like"
+msgstr "nie lubisz"
+
+#: app/templates/_post_end_posta_to_user_page.html:7
+#: app/templates/_recomendation.html:9
+msgid "this post"
+msgstr "tego postu"
+
+#: app/templates/_post_end_posta_to_user_page.html:9
+#: app/templates/_recomendation.html:11
+msgid "This post like"
+msgstr "Ten post polubiłeś "
+
+#: app/templates/_post_end_posta_to_user_page.html:10
+#: app/templates/_post_end_posta_to_user_page.html:17
+#: app/templates/_recomendation.html:12
+msgid "you and"
+msgstr "ty i jeszcze"
+
+#: app/templates/_post_end_posta_to_user_page.html:14
+#: app/templates/_post_end_posta_to_user_page.html:21
+#: app/templates/_post_end_posta_to_user_page.html:26
+#: app/templates/_recomendation.html:16
+msgid "user"
+msgstr "użytkownik"
+
+#: app/templates/_post_end_posta_to_user_page.html:14
+#: app/templates/_post_end_posta_to_user_page.html:21
+#: app/templates/_post_end_posta_to_user_page.html:26
+#: app/templates/_recomendation.html:16
+msgid "s"
+msgstr "ów"
+
+#: app/templates/_post_end_posta_to_user_page.html:16
+msgid "This post dislike"
+msgstr "Ten post nie lubię "
+
+#: app/templates/_post_end_posta_to_user_page.html:23
+#: app/templates/_recomendation.html:19
+msgid "This post has been read"
+msgstr "Ten post został przeczytany"
+
+#: app/templates/_post_end_posta_to_user_page.html:23
+#: app/templates/_post_end_posta_to_user_page.html:25
+#: app/templates/_recomendation.html:19 app/templates/_recomendation.html:21
+msgid "times"
+msgstr "razy"
+
+#: app/templates/_post_end_posta_to_user_page.html:25
+#: app/templates/_recomendation.html:21
+msgid "This post has been commented time  "
+msgstr "Ten post został skomentowany"
+
+#: app/templates/_post_end_posta_to_user_page.html:26
+msgid "This post was later postponed by "
+msgstr ""
+
+#: app/templates/_private_messages.html:39
+msgid "Press to answer this message"
+msgstr "Ten post został  przełożony na później przez"
+
+#: app/templates/_private_messages.html:39
+msgid "Answer"
+msgstr "Odpowiedź"
+
+#: app/templates/about.html:4 app/templates/base.html:51
+msgid "About"
+msgstr "O tej stronie"
+
+#: app/templates/base.html:39 app/templates/section.html:4
+msgid "Sections"
+msgstr "Sekcje"
+
+#: app/templates/base.html:45
+msgid "MyProjects"
+msgstr "MojeProjekty"
+
+#: app/templates/base.html:57 app/templates/coperation.html:5
+msgid "Cooperation"
+msgstr "Współpraca"
+
+#: app/templates/base.html:81
+msgid "Messages"
+msgstr "Wiadomości"
+
+#: app/templates/base.html:99
+msgid "Login"
+msgstr "Zaloguj"
+
+#: app/templates/base.html:103
+msgid "Logout"
+msgstr "Wylouj"
+
+#: app/templates/base.html:157
+msgid "Contacts for cooperation: "
+msgstr "Kontakty do współpracy: "
+
+#: app/templates/base.html:181
+msgid "Error: Could not contact server."
+msgstr "Błąd: nie można skontaktować się z serwerem."
+
+#: app/templates/coperation.html:7
+msgid "Please log in or register to use the feedback form on this page."
+msgstr "Zaloguj się lub zarejestruj, aby skorzystać z formularza opinii na tej stronie."
+
+#: app/templates/coperation.html:21
+msgid ""
+"Hi my nickname is Pluszz. I am an amateur engineer from Ukraine. I like "
+"IT, but I don't do it professionally. I am currently interested in web "
+"development on python 3, so I made this blog engine short written in a"
+msgstr ""
+„Cześć, nazywam się Pluszz. Jestem inżynierem-amatorem z Ukrainy. Lubię”
+„IT, ale nie robię tego zawodowo. Obecnie interesuję się internetem”
+„programowanie w Pythonie 3, więc napisałem ten blog na”
+
+#: app/templates/coperation.html:23
+msgid "Since I studied the flask on"
+msgstr "O ile kształciłem Flask przy pomocy"
+
+#: app/templates/coperation.html:24
+msgid "Miguel Greenberg's \"The Flask Mega-Tutorial\""
+msgstr " \"The Flask Mega-Tutorial\" Miguela Greenberga "
+
+#: app/templates/coperation.html:25
+msgid ""
+"there are significant particles of his code in my appendix. Because the "
+"author is as poor as a church mouse, this blog is hosted for free on the "
+"service"
+msgstr ""
+„W moim dodatku znajdują się znaczące fragmenty jego kodu. Ponieważ”
+„autor jest biedny jak mysz kościelna, ten blog jest hostowany bezpłatnie na”
+"servicie"
+
+#: app/templates/coperation.html:29
+msgid ""
+"I will be grateful for suggestions in the comments or private messages. "
+"When criticizing, please remember that I am not a magician, I'm just "
+"learning."
+msgstr ""
+"Będę wdzięczny za sugestie w komentarzach lub wiadomościach prywatnych".
+"Krytykując, pamiętaj, że nie jestem magiem, po prostu"
+" się uczę." 
+
+#: app/templates/coperation.html:32
+msgid ""
+"This page contains information about cooperation. If you have interesting"
+" projects and you lack hands, please contact me. I always agree to help. "
+"If you have uninteresting projects with the opportunity to earn well, "
+"please contact me."
+msgstr ""
+"Ta strona zawiera informacje o współpracy. Jeśli masz ciekawe"
+"projekty i brakuje Ci rąk, proszę o kontakt. Zawsze zgadzam się pomóc".
+"Jeśli masz nieciekawe projekty z możliwością dobrego zarobku",
+"Skontaktuj się ze mną, będę wdzięczny." 
+
+#: app/templates/coperation.html:35
+msgid "What can I do:"
+msgstr "Na czym śię znam:"
+
+#: app/templates/coperation.html:53
+msgid "You can contact me by mail or telegram"
+msgstr "Możesz skontaktować się ze mną drogą mailową lub telegramem "
+
+#: app/templates/coperation.html:55
+msgid "or here via the"
+msgstr "lub tu przez"
+
+#: app/templates/coperation.html:57
+msgid "feedback form"
+msgstr "formularz zwrotny"
+
+#: app/templates/coperation.html:59
+msgid "indicating how you can be contacted"
+msgstr "wskazując, jak można się z Tobą skontaktować"
+
+#: app/templates/coperation.html:63
+msgid "My telegram:"
+msgstr "Mój telegram"
+
+#: app/templates/coperation.html:65
+msgid "My email"
+msgstr "Email"
+
+#: app/templates/coperation.html:78 app/templates/dialog.html:73
+#: app/templates/post.html:88 app/templates/send_message.html:15
+msgid "* This form supports"
+msgstr "Ta forma obsługuje"
+
+#: app/templates/coperation.html:80 app/templates/dialog.html:75
+#: app/templates/post.html:90 app/templates/send_message.html:17
+msgid "bbcode"
+msgstr "bbcode"
+
+#: app/templates/dialog.html:10 app/templates/user_page.html:10
+msgid "Registration"
+msgstr "Rejestracja"
+
+#: app/templates/dialog.html:12 app/templates/user_page.html:12
+msgid "Last seen on"
+msgstr "Ostatnja wizyta"
+
+#: app/templates/dialog.html:17 app/templates/user_page.html:17
+msgid "Reputation"
+msgstr "Reputacja"
+
+#: app/templates/dialog.html:63
+#, python-format
+msgid "Send New Message to %(recipient)s:"
+msgstr "Wyślij nową wiadomość do %(recipient)a:"
+
+#: app/templates/index.html:8
+msgid ""
+"This is the main page of this blog. Here \n"
+"                              you can see a list of all posts without \n"
+"                              division into sections. Thank you for "
+"visiting me."
+msgstr ""
+„To jest główna strona tego bloga. Tutaj \ n"
+"możesz zobaczyć listę wszystkich postów bez \ n"
+"podziału na sekcje. Dziękuję że"
+"odwiedziałeś mnie." 
+
+#: app/templates/post.html:19
+msgid "Original language the post is: "
+msgstr "Oryginalny język posta to: "
+
+#: app/templates/post.html:19
+msgid "translate into your language ?"
+msgstr "przetłumaczyć na twój język? "
+
+#: app/templates/post.html:27
+msgid "Translate"
+msgstr "Przetłumaczyć"
+
+#: app/templates/post.html:62
+msgid "Unselect Post"
+msgstr ""
+
+#: app/templates/post.html:64
+msgid "Select Post"
+msgstr ""
+
+#: app/templates/post.html:67
+msgid "Unhidden Post"
+msgstr ""
+
+#: app/templates/post.html:69
+msgid "Hidden Post"
+msgstr ""
+
+#: app/templates/post.html:71
+msgid "Delete Post"
+msgstr ""
+
+#: app/templates/post.html:72
+msgid "Edit Post"
+msgstr ""
+
+#: app/templates/post.html:112
+msgid "Newer comments"
+msgstr "Nowsze komentarzy"
+
+#: app/templates/post.html:115
+msgid "Older comments"
+msgstr "Starsze komentarz"
+
+#: app/templates/projects.html:5
+msgid "My projects"
+msgstr "Moje Projekty"
+
+#: app/templates/projects.html:7
+msgid ""
+"On this page I will post links to my little funny projects and related "
+"materials."
+msgstr ""
+„Na tej stronie będę umieszczać linki do moich małych zabawnych projektów i pokrewnych”
+"materiałów." 
+
+#: app/templates/search.html:4
+msgid "Type any word in the text box and press \"Enter\" to search"
+msgstr "Wpisz dowolne słowo w polu tekstowym i naciśnij \ "Enter \", aby rozpocząć wyszukiwanie "
+
+#: app/templates/search.html:12
+msgid "Search Results"
+msgstr "Rezultat wyszukiwania"
+
+#: app/templates/search.html:23
+msgid "Previous results"
+msgstr "Poprzednia strona"
+
+#: app/templates/search.html:28
+msgid "Next results"
+msgstr "Następna strona"
+
+#: app/templates/send_message.html:5
+#, python-format
+msgid "Send Message to %(recipient)s:"
+msgstr "Wyślij wiadomość do %(recipient)a:"
+
+#: app/templates/user_page.html:20
+msgid "Send message"
+msgstr "Wyślij wiadomość"
+
+#: app/templates/user_page.html:22
+msgid "Edit your profile"
+msgstr "Edytuj swój profil"
+
+#: app/templates/user_page.html:30
+msgid "Favorite posts"
+msgstr "Ulubione posty "
+
+#: app/templates/user_page.html:31
+msgid "Read later"
+msgstr "Przczytać później "
+
+#: app/templates/user_page.html:32
+msgid "Recomendation"
+msgstr "Rekomendacji"
+
+#: app/templates/user_page.html:33
+msgid "messages"
+msgstr "wiadomości"
+
+#: app/templates/user_page.html:35
+msgid "users"
+msgstr "użytkownicy"
+
+#: app/templates/auth/login.html:17
+msgid "New User?"
+msgstr "Nowy użytkownik"
+
+#: app/templates/auth/login.html:17
+msgid "Click to Register!"
+msgstr "Przejdz dla rejestrcji"
+
+#: app/templates/auth/login.html:19
+msgid "Forgot Your Password?"
+msgstr "Zresetuj hasło"
+
+#: app/templates/auth/login.html:20
+msgid "Click to Reset It"
+msgstr "Zresetuj"
+
+#: app/templates/auth/reset_password.html:5
+msgid "Reset Your Password"
+msgstr "Twoje hasło zostało"
+
+#: app/templates/errors/404.html:4
+msgid "Not Found"
+msgstr "Nie znaleziono"
+
+#: app/templates/errors/404.html:5 app/templates/errors/500.html:6
+msgid "Back"
+msgstr "Powrót"
+
+#: app/templates/errors/500.html:4
+msgid "An unexpected error has occurred"
+msgstr "Wystąpił nieoczekiwany błąd"
+
+#: app/templates/errors/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr "Administrator został powiadomiony. Przepraszam za niedogodności! "
+

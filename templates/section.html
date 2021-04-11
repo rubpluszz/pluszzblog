@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+	<h1>{{ _("Sections") }}<br></h1>
+	{% for section in sections %}
+		<ul>
+			<li>
+				<a href="{{ url_for('main.one_sections_posts', section=section.section) }}" class="discription-this-page-inborder">{{ section.section }}</a>
+			</li>
+	    </ul>
+	{% endfor %}
+{% endblock%}
